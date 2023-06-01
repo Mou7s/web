@@ -1,0 +1,7 @@
+@media (prefers-color-scheme: dark) {
+  /*黑暗模式下的样式处理*/
+  html,
+  img {
+    filter: invert(1) hue-rotate(180deg);
+  }
+}
