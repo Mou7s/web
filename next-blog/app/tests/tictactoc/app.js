@@ -5,8 +5,8 @@ import ticStyles from "../../tictactoc.module.css";
 import Link from "next/link";
 import dynamic from "next/dynamic";
 
-function Square() {
-  const [value, setValue] = useState(null);
+export function Square() {
+  const [value, setValue] = useState();
 
   function handleClick() {
     setValue("X");
