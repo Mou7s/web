@@ -3,7 +3,6 @@ import React, { useState, StrictMode, useEffect } from "react";
 import styles from "../../page.module.css";
 import ticStyles from "../../tictactoc.module.css";
 import Link from "next/link";
-import dynamic from "next/dynamic";
 
 function Square() {
   const [value, setValue] = useState();
