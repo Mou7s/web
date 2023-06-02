@@ -6,7 +6,7 @@ export default function Pages() {
   return (
     <main className={styles.main}>
       <div className={styles.center}>
-        <h1>Mou7s' Blog </h1>
+        <h1>Mou7s' Blogs </h1>
       </div>
 
       <div className={styles.grid}>
