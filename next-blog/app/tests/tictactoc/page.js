@@ -13,6 +13,7 @@ function Square({ value, onSquareClick }) {
 }
 
 function Board() {
+  const [xIsNext, setXIsNext] = useState(true);
   const [squares, setSquares] = useState(Array(9).fill(null));
 
   function handleClick(i) {
@@ -75,7 +76,11 @@ export default function Pages() {
       <div className={styles.center}>
         <h1>Tictactoc</h1>
       </div>
+      <div className={styles.center}>
       <Board></Board>
+
+      </div>
+
     </div>
   );
 }
