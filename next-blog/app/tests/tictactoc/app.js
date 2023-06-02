@@ -1,14 +1,17 @@
 "use client";
+import React, { useState, StrictMode, useEffect } from "react";
 import styles from "../../page.module.css";
 import ticStyles from "../../tictactoc.module.css";
-import { useState } from "react";
+import Link from "next/link";
+import dynamic from "next/dynamic";
 
-export function Square() {
+function Square() {
   const [value, setValue] = useState(null);
 
   function handleClick() {
     setValue("X");
   }
+
   return (
     <button className={ticStyles.square} onClick={handleClick}>
       {value}
@@ -16,7 +19,7 @@ export function Square() {
   );
 }
 
-export function Board() {
+export default function Board() {
   return (
     <div>
       <div className={ticStyles.boardRow}>

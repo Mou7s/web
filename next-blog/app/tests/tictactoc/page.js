@@ -1,9 +1,12 @@
 "use client";
+import React, { useState, StrictMode, useEffect } from "react";
 import styles from "../../page.module.css";
 import ticStyles from "../../tictactoc.module.css";
-import { useState } from "react";
-import { Square, Board } from "./app";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { Board, Square } from "./app.js";
+
+const DynamicComponent = dynamic(() => import("./app.js"));
 
 export default function Pages() {
   return (
@@ -12,7 +15,7 @@ export default function Pages() {
         <h1>Tic-Tac-Toe</h1>
       </div>
       <div className={styles.center}>
-        <Board></Board>
+        <DynamicComponent></DynamicComponent>
       </div>
     </main>
   );
