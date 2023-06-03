@@ -113,7 +113,7 @@ export default function Pages() {
       <div className={styles.center}>
         <h1>Tictactoc</h1>
       </div>
-      <div className={styles.main}>
+      <div>
         <Board></Board>
       </div>
     </div>
