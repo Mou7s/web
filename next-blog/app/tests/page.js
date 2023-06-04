@@ -20,6 +20,16 @@ export default function Pages() {
           </h2>
           <p>Tic-Tac-Toe</p>
         </Link>
+        <Link
+          href="/tests/animation"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            Some Animations <span>-&gt;</span>
+          </h2>
+          <p>ease-in-out</p>
+        </Link>
       </div>
     </main>
   );

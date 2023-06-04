@@ -1,0 +1,19 @@
+.movingDiv {
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    border-radius: 50%;
+    border: 2px solid darkgray;
+    position: relative;
+    animation: move 5s ease-in-out infinite alternate;
+}
+
+@keyframes move {
+    0% {
+        left: 0;
+    }
+
+    100% {
+        left: 500px;
+    }
+}
