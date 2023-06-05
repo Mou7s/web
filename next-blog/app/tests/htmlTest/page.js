@@ -10,6 +10,7 @@ export default function Pages() {
         <h1>html test</h1>
       </div>
       <div>
+        <p>optgroup</p>
         <select>
           <optgroup label="水果">
             <option value="apple">苹果</option>
@@ -24,9 +25,7 @@ export default function Pages() {
         </select>
       </div>
 
-      <div>
-
-      </div>
+      <div></div>
     </div>
   );
 }
