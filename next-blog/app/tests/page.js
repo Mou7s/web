@@ -30,6 +30,16 @@ export default function Pages() {
           </h2>
           <p>ease-in-out</p>
         </Link>
+        <Link
+          href="/tests/htmlTest"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            html tests <span>-&gt;</span>
+          </h2>
+          <p>some tests</p>
+        </Link>
       </div>
     </main>
   );
