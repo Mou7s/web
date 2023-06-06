@@ -6,7 +6,7 @@ import Link from "next/link";
 
 function Gallery() {
   const [index, setIndex] = useState(0);
-  const [showMore, setShowMore] = useState(false);
+  const [showMore, setShowMore] = useState(true);
 
   let hasPrev = index > 0;
   let hasNext = index < sculptureList.length - 1;

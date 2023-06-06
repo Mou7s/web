@@ -31,14 +31,24 @@ export default function Pages() {
           <p>ease-in-out</p>
         </Link>
         <Link
-          href="/tests/htmlTest"
+          href="/tests/state"
           className={styles.card}
           rel="noopener noreferrer"
         >
           <h2>
-            html tests <span>-&gt;</span>
+            state <span>-&gt;</span>
           </h2>
-          <p>some tests</p>
+          <p>useState</p>
+        </Link>
+        <Link
+          href="/tests/todolist"
+          className={styles.card}
+          rel="noopener noreferrer"
+        >
+          <h2>
+            todolist <span>-&gt;</span>
+          </h2>
+          <p>react test</p>
         </Link>
       </div>
     </main>
