@@ -2,7 +2,6 @@
 import { useState } from "react";
 import TodoStyles from "../../todolist.module.css";
 
-
 export default function TaskList({ todos, onChangeTodo, onDeleteTodo }) {
   return (
     <ul>
@@ -42,10 +41,10 @@ function Task({ todo, onChange, onDelete }) {
     );
   } else {
     todoContent = (
-      <div>
+      <span>
         {todo.title}
         <button onClick={() => setIsEditing(true)}>Edit</button>
-      </div>
+      </span>
     );
   }
 
@@ -59,7 +58,7 @@ function Task({ todo, onChange, onDelete }) {
         }}
       ></input>
       {todoContent}
-      <button onClick={() => onDelete(todo.id)}>删除</button>
+      <button onClick={() => onDelete(todo.id)}>Delete</button>
     </label>
   );
 }
