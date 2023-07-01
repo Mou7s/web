@@ -1,10 +1,4 @@
-import {
-  Component,
-  OnChanges,
-  OnInit,
-  SimpleChanges,
-  Input,
-} from '@angular/core';
+import { Component, OnChanges, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
