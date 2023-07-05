@@ -4,33 +4,61 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <script>
-      window.addEventListener("DOMContentLoaded", function () {
-        const table = document.getElementById("table");
+    <style>
+      .container {
+        display: flex;
+        gap: 0.5rem;
+        flex-direction: column;
+      }
 
-        // 检查是否存在 border 属性
-        if (table.hasAttribute("border")) {
-          // 设置 border 属性为 1
-          table.setAttribute("border", "1");
-        }
+      button {
+        width: 100px;
+      }
 
-        // 设置 summary 属性
-        table.summary = "note: increased border";
-      });
-    </script>
+      div.parent {
+        border: 1px solid black;
+        padding: 5px;
+        width: 100px;
+        height: 100px;
+      }
+
+      div.child {
+        border: 1px solid red;
+        margin: 10px;
+        padding: 5px;
+        width: 80px;
+        height: 60px;
+        box-sizing: border-box;
+      }
+    </style>
   </head>
   <body>
-    <table id="table">
-      <tr>
-        <td>行1，列1</td>
-        <td>行1，列2</td>
-        <td>行1，列3</td>
-      </tr>
-      <tr>
-        <td>行2，列1</td>
-        <td>行2，列2</td>
-        <td>行2，列3</td>
-      </tr>
-    </table>
+    <div class="container">
+      <div class="parent">父元素</div>
+      <button id="add-child" type="button">添加子元素</button>
+      <button id="remove-child" type="button">移除子元素</button>
+    </div>
+
+    <script>
+      const parent = document.body.querySelector(".parent");
+
+      const addChild = document.body.querySelector("#add-child");
+      addChild.addEventListener("click", () => {
+        // 只在文本节点“父节点”没有子节点时添加一个子节点
+        if (parent.childNodes.length > 1) {
+          return;
+        }
+        const child = document.createElement("div");
+        child.classList.add("child");
+        child.textContent = "子节点";
+        parent.appendChild(child);
+      });
+
+      const removeChild = document.body.querySelector("#remove-child");
+      removeChild.addEventListener("click", () => {
+        const child = document.body.querySelector(".child");
+        parent.removeChild(child);
+      });
+    </script>
   </body>
 </html>
