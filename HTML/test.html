@@ -2,13 +2,35 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <script>
+      window.addEventListener("DOMContentLoaded", function () {
+        const table = document.getElementById("table");
+
+        // 检查是否存在 border 属性
+        if (table.hasAttribute("border")) {
+          // 设置 border 属性为 1
+          table.setAttribute("border", "1");
+        }
+
+        // 设置 summary 属性
+        table.summary = "note: increased border";
+      });
+    </script>
   </head>
   <body>
-    <script>
-      var cities = ["lonDon", "ManCHESTer", "BiRmiNGHAM", "liVERpoOL"];
-    </script>
+    <table id="table">
+      <tr>
+        <td>行1，列1</td>
+        <td>行1，列2</td>
+        <td>行1，列3</td>
+      </tr>
+      <tr>
+        <td>行2，列1</td>
+        <td>行2，列2</td>
+        <td>行2，列3</td>
+      </tr>
+    </table>
   </body>
 </html>
