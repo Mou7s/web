@@ -4,61 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <style>
-      .container {
-        display: flex;
-        gap: 0.5rem;
-        flex-direction: column;
-      }
-
-      button {
-        width: 100px;
-      }
-
-      div.parent {
-        border: 1px solid black;
-        padding: 5px;
-        width: 100px;
-        height: 100px;
-      }
-
-      div.child {
-        border: 1px solid red;
-        margin: 10px;
-        padding: 5px;
-        width: 80px;
-        height: 60px;
-        box-sizing: border-box;
-      }
-    </style>
+    <link rel="stylesheet" href="./test.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="parent">父元素</div>
-      <button id="add-child" type="button">添加子元素</button>
-      <button id="remove-child" type="button">移除子元素</button>
-    </div>
+    <h1>header 1</h1>
 
-    <script>
-      const parent = document.body.querySelector(".parent");
-
-      const addChild = document.body.querySelector("#add-child");
-      addChild.addEventListener("click", () => {
-        // 只在文本节点“父节点”没有子节点时添加一个子节点
-        if (parent.childNodes.length > 1) {
-          return;
-        }
-        const child = document.createElement("div");
-        child.classList.add("child");
-        child.textContent = "子节点";
-        parent.appendChild(child);
-      });
-
-      const removeChild = document.body.querySelector("#remove-child");
-      removeChild.addEventListener("click", () => {
-        const child = document.body.querySelector(".child");
-        parent.removeChild(child);
-      });
-    </script>
+    <script src="test.js"></script>
   </body>
 </html>

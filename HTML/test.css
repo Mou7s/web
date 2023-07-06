@@ -1,11 +1,14 @@
-html {
-    background-color: aliceblue
+html,
+body {
+    margin: 0;
 }
-@media (prefers-color-scheme:dark) {
 
-    /*黑暗模式下的样式处理*/
-    html,
-    img {
-        filter: invert(1)hue-rotate(180deg);
-    }
+html {
+    font-family: sans-serif;
+    height: 100%;
+}
+
+body {
+    overflow: hidden;
+    height: inherit;
 }
