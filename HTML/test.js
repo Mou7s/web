@@ -1,28 +1,49 @@
-class Shape {
-  constructor(name, sides, sideLength) {
-    this.name = name;
-    this.sides = sides;
-    this.sideLength = sideLength;
-  }
+var requestURL =
+  "https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json";
 
-  // New method to calculate and log the perimeter of the shape
-  calcPerimeter() {
-    const perimeter = this.sides * this.sideLength;
-    console.log(`The perimeter of ${this.name} is ${perimeter}`);
-  }
+$.getJSON(requestURL, function (superHeroes) {
+  populateHeader(superHeroes);
+  showHeroes(superHeroes);
+});
+function populateHeader(jsonObj) {
+  var $header = $("header");
+
+  var $myH1 = $("<h1>").text(jsonObj.squadName);
+  $header.append($myH1);
+
+  var $myPara = $("<p>").text(
+    `Hometown: ${jsonObj.homeTown} // Formed: ${jsonObj.formed}`
+  );
+  $header.append($myPara);
 }
 
-class Square extends Shape {
-  constructor(sideLength) {
-    super("Square", 4, sideLength);
-  }
+function showHeroes(jsonObj) {
+  var heroes = jsonObj["members"];
+  var $section = $("section");
 
-  calcArea() {
-    const Area = this.sideLength * this.sideLength;
-    console.log(`Area is ${Area}`);
+  for (var i = 0; i < heroes.length; i++) {
+    var hero = heroes[i];
+
+    var $myArticle = $("<article>");
+    var $myH2 = $("<h2>").text(hero.name);
+    var $myPara1 = $("<p>").text("Secret identity: " + hero.secretIdentity);
+    var $myPara2 = $("<p>").text("Age: " + hero.age);
+    var $myPara3 = $("<p>").text("Superpowers:");
+    var $myList = $("<ul>");
+
+    var superPowers = hero.powers;
+    for (var j = 0; j < superPowers.length; j++) {
+      var $listItem = $("<li>").text(superPowers[j]);
+      $myList.append($listItem);
+    }
+
+    $myArticle
+      .append($myH2)
+      .append($myPara1)
+      .append($myPara2)
+      .append($myPara3)
+      .append($myList);
+
+    $section.append($myArticle);
   }
 }
-
-const a1 = new Square(4);
-a1.calcArea();
-a1.calcPerimeter();
