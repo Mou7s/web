@@ -36,14 +36,22 @@
           ")"
         );
       }
-      function Shape() {}
-      function Ball(x, y, velX, velY, color, size) {
-        this.x = x;
-        this.y = y;
-        this.velX = velX;
-        this.velY = velY;
-        this.color = color;
-        this.size = size;
+      class Shape {
+        constructor(x, y, velX, velY) {
+          this.x = x;
+          this.y = y;
+          this.velX = velX;
+          this.velY = velY;
+        }
+      }
+
+      class Ball extends Shape {
+        constructor(x, y, velX, velY, color, size) {
+          super(x, y, velX, velY);
+          this.color = color;
+          this.size = size;
+          this.exists = true; // 新增的 exists 属性，默认为
+        }
       }
 
       Ball.prototype.draw = function () {
