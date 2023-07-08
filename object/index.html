@@ -36,7 +36,7 @@
           ")"
         );
       }
-
+      function Shape() {}
       function Ball(x, y, velX, velY, color, size) {
         this.x = x;
         this.y = y;
@@ -74,6 +74,20 @@
         this.y += this.velY;
       };
 
+      Ball.prototype.collisionDetect = function () {
+        for (let j = 0; j < balls.length; j++) {
+          if (this !== balls[j]) {
+            const dx = this.x - balls[j].x;
+            const dy = this.y - balls[j].y;
+            const distance = Math.sqrt(dx * dx + dy * dy);
+
+            if (distance < this.size + balls[j].size) {
+              balls[j].color = this.color = randomColor();
+            }
+          }
+        }
+      };
+
       let balls = [];
 
       while (balls.length < 25) {
@@ -97,6 +111,7 @@
         for (let i = 0; i < balls.length; i++) {
           balls[i].draw();
           balls[i].update();
+          balls[i].collisionDetect();
         }
 
         requestAnimationFrame(loop);
