@@ -13,9 +13,12 @@
     <script type="module" src="./main.js"></script>
     <script>
       // 定义弹球计数变量
+
       const para = document.querySelector("p");
       let count = 0;
+
       // 设置画布
+
       const canvas = document.querySelector("canvas");
       const ctx = canvas.getContext("2d");
 
@@ -42,6 +45,7 @@
           ")";
         return color;
       }
+
       // 定义 Shape 构造器
 
       class Shape {
@@ -53,6 +57,7 @@
           this.exists = exists;
         }
       }
+
       // 定义 Ball 构造器，继承自 Shape
 
       class Ball extends Shape {
@@ -111,11 +116,13 @@
         }
       }
 
+      // 定义 EvilCircle 构造器, 继承自 Shape
+
       class EvilCircle extends Shape {
         constructor(x, y, exists) {
-          super(x, y, 20, 20, exists); // 继承 x, y, exists 并设定 velX 和 velY 为 20
-          this.color = "white"; // 新增的 color 属性，默认为 'white'
-          this.size = 10; // 新增的 size 属性，默认为 10
+          super(x, y, 20, 20, exists);
+          this.color = "white";
+          this.size = 10;
         }
 
         // 定义 EvilCircle 绘制方法
@@ -129,7 +136,6 @@
         }
 
         // 定义 EvilCircle 的边缘检测（checkBounds）方法
-
         checkBounds() {
           if (this.x + this.size >= width) {
             this.x -= this.size;
@@ -176,8 +182,8 @@
             }
           };
         }
-
         // 定义 EvilCircle 冲突检测函数
+
         collisionDetect() {
           for (let j = 0; j < balls.length; j++) {
             if (balls[j].exists) {
@@ -197,7 +203,7 @@
 
       // 定义一个数组，生成并保存所有的球，
 
-      const balls = [];
+      let balls = [];
 
       while (balls.length < 25) {
         const size = random(10, 20);
@@ -218,6 +224,9 @@
 
       // 定义一个循环来不停地播放
 
+      let evil = new EvilCircle(random(0, width), random(0, height), true);
+      evil.setControls();
+
       function loop() {
         ctx.fillStyle = "rgba(0,0,0,0.25)";
         ctx.fillRect(0, 0, width, height);
@@ -236,6 +245,7 @@
 
         requestAnimationFrame(loop);
       }
+
       loop();
     </script>
   </body>
