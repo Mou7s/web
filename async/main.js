@@ -1,12 +1,8 @@
-import "./style.css";
+const button = document.querySelector("#set-alarm");
+button.addEventListener("click", setAlarm);
 
-const fetchPromise = fetch(
-  "https://mdn.github.io/learning-area/javascript/apis/fetching-data/can-store/products.json"
-);
-
-fetchPromise.then((response) => {
-  const jsonPromise = response.json();
-  jsonPromise.then((json) => {
-    console.log(json[0].name);
-  });
-});
+function setAlarm() {
+  window.setTimeout(() => {
+    console.log("Wake up!");
+  }, 1000);
+}
