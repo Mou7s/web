@@ -1,8 +1,27 @@
-button {
-    display: block;
+body {
+    background: #6c373f;
+    display: flex;
+    justify-content: center;
 }
 
-div,
-button {
-    margin: .5rem 0;
+#alice-container {
+    width: 90vh;
+    display: grid;
+    place-items: center;
+    grid-template-areas:
+        "a1 . ."
+        ". a2 ."
+        ". . a3";
+}
+
+#alice1 {
+    grid-area: a1;
+}
+
+#alice2 {
+    grid-area: a2;
+}
+
+#alice3 {
+    grid-area: a3;
 }

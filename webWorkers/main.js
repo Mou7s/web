@@ -1,34 +1,21 @@
-function generatePrimes(quota) {
-  return new Promise((resolve, reject) => {
-    function isPrime(n) {
-      for (let c = 2; c <= Math.sqrt(n); ++c) {
-        if (n % c === 0) {
-          return false;
-        }
-      }
-      return true;
-    }
+// 在 "generate.js" 中创建一个新的 worker
+const worker = new Worker("./generate.js");
 
-    const primes = [];
-    const maximum = 1000000;
-
-    while (primes.length < quota) {
-      const candidate = Math.floor(Math.random() * (maximum + 1));
-      if (isPrime(candidate)) {
-        primes.push(candidate);
-      }
-    }
-
-    resolve(primes);
-  });
-}
-
-document.querySelector("#generate").addEventListener("click", async () => {
+// 当用户点击 "Generate primes" 时，给 worker 发送一条消息。
+// 消息中的 command 属性是 "generate", 还包含另外一个属性 "quota"，即要生成的质数。
+document.querySelector("#generate").addEventListener("click", () => {
   const quota = document.querySelector("#quota").value;
-  const primes = await generatePrimes(quota);
+  worker.postMessage({
+    command: "generate",
+    quota: quota,
+  });
+});
+
+// 当 worker 给主线程回发一条消息时，为用户更新 output 框，包含生成的质数（从 message 中获取）。
+worker.addEventListener("message", (message) => {
   document.querySelector(
     "#output"
-  ).textContent = `Finished generating ${quota} primes!`;
+  ).textContent = `Finished generating ${message.data} primes!`;
 });
 
 document.querySelector("#reload").addEventListener("click", () => {
