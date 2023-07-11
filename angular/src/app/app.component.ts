@@ -6,8 +6,13 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class AppComponent {
-  myColor = 'red';
-  myBackgroundColor = 'cyan';
-  myFontSizeEM = 3;
-  myFontSize = 50;
+  li_list = [
+    { href: 'https://angular.io/tutorial', content: 'Tour of Heroes' },
+    { href: 'https://angular.io/cli', content: 'CLI Documentation' },
+    { href: 'https://blog.angular.io/', content: 'Angular blog' },
+  ];
+
+  show(content: string | undefined) {
+    alert(content);
+  }
 }
