@@ -1,4 +1,13 @@
-<div class="grid justify-center">
-  <div><span [textContent]="message"></span></div>
-  <div><img src="{{ imageURL }}" alt="imageURL" /><span></span></div>
-</div>
+<h3>1、[style.color] <button [style.color]="myColor">Red</button></h3>
+<h3>
+  2、[style.background-color]
+  <button [style.background-color]="myBackgroundColor">Save</button>
+</h3>
+<h3>
+  3、[style.font-size.em]
+  <button [style.font-size.em]="myFontSizeEM">Big</button>
+</h3>
+<h3>
+  4、[style.font-size.%]
+  <button [style.font-size.%]="myFontSize">Small</button>
+</h3>
