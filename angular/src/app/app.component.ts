@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class AppComponent {
-  username = '';
+  names = ['Polo', 'Q5', 'Q7'];
 }
