@@ -1,3 +1,12 @@
-<div *ngFor="let name of names; let i = index">
-  <div>{{ i }}:{{ name }}</div>
+<!-- ngSwitch and ngSwitchCase - enum example -->
+<p>ngSwitch和ngSwitchCase示例</p>
+<div [ngSwitch]="day">
+  <b *ngSwitchCase="days.SUNDAY"> SUNDAY</b>
+  <b *ngSwitchCase="days.MONDAY"> MONDAY</b>
+  <b *ngSwitchCase="days.TUESDAY">TUESDAY</b>
+  <b *ngSwitchCase="days.WEDNESDAY">WEDNESDAY</b>
+  <b *ngSwitchCase="days.THURSDAY">THURSDAY</b>
+  <b *ngSwitchCase="days.FRIDAY">FRIDAY</b>
+  <b *ngSwitchCase="days.SATURDAY">SATURDAY</b>
+  <b *ngSwitchDefault>No Days</b>
 </div>

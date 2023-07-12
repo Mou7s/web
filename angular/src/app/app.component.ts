@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styles: [],
 })
 export class AppComponent {
-  names = ['Polo', 'Q5', 'Q7'];
+  days = Days;
+  day = Days.SUNDAY;
+}
+
+export enum Days {
+  SUNDAY,
+  MONDAY,
+  TUESDAY,
+  WEDNESDAY,
+  THURSDAY,
+  FRIDAY,
+  SATURDAY,
 }
