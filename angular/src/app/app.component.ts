@@ -1,21 +1,12 @@
 import { Component } from '@angular/core';
+import {  map, of } from 'rxjs';
 
 @Component({
   selector: 'app-root',
-  templateUrl: 'app.component.html',
-  styles: [],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  days = Days;
-  day = Days.SUNDAY;
-}
 
-export enum Days {
-  SUNDAY,
-  MONDAY,
-  TUESDAY,
-  WEDNESDAY,
-  THURSDAY,
-  FRIDAY,
-  SATURDAY,
+
 }
