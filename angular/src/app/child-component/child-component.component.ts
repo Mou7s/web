@@ -12,7 +12,7 @@ export class ChildComponentComponent implements OnInit {
   @Output() clickme: EventEmitter<string> = new EventEmitter<string>();
 
   showme(content: string | undefined) {
-    this.clickme.emit(content);
+    this.clickme.emit();
   }
   ngOnInit() {}
 }

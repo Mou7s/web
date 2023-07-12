@@ -1,18 +1,2 @@
-<ul>
-  <!--引用子组件标签-->
-  <app-child-component
-    [href]="li_list[0].href"
-    [content]="li_list[0].content"
-    (clickme)="show(li_list[0].content)"
-  ></app-child-component>
-  <app-child-component
-    [href]="li_list[1].href"
-    [content]="li_list[1].content"
-    (clickme)="show(li_list[1].content)"
-  ></app-child-component>
-  <app-child-component
-    [href]="li_list[2].href"
-    [content]="li_list[2].content"
-    (clickme)="show(li_list[2].content)"
-  ></app-child-component>
-</ul>
+<input #phone placeholder="phone number" />
+<button (click)="callPhone(phone.value)">Call</button>
