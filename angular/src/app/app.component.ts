@@ -11,6 +11,10 @@ import {
   tap,
   filter,
   concat,
+  merge,
+  concatMap,
+  zip,
+  take,
 } from 'rxjs';
 
 @Component({
@@ -20,19 +24,12 @@ import {
 })
 export class AppComponent implements AfterViewInit {
   constructor() {}
+
   ngAfterViewInit(): void {
-    // 创建两个发出数字的 Observable
-    const numbersObservable1 = from([1, 2, 3]);
-    const numbersObservable2 = from([4, 5, 6]);
+    const observable = from(fetch('https://api.github.com/users/barda'));
 
-    // 使用 concat 操作符将两个 Observable 合并到一个 Observable 中
-    const numbersObservable = numbersObservable1.pipe(
-      concat(numbersObservable2)
-    );
-
-    // 订阅 Observable
-    numbersObservable.subscribe((x) => {
-      console.log(x);
+    observable.subscribe((data) => {
+      console.log(data);
     });
   }
 }
