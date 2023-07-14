@@ -1,0 +1,5 @@
+<form [formGroup]="myForm" class="grid justify-center">
+  <span>name</span><input type="text" formControlName="name" />
+  <span>email</span><input type="text" formControlName="email" />
+  <button (click)="onSubmit()">Submit</button>
+</form>
