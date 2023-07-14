@@ -16,12 +16,18 @@ export class AppComponent {
 
   constructor(private fb: FormBuilder) {
     this.myForm = this.fb.group({
-      name: ['', [Validators.required]],
-      email: ['', [Validators.required, Validators.email]],
+      name: this.fb.control('', [Validators.required]),
+      email: this.fb.control('', [Validators.required, Validators.email]),
     });
   }
 
   onSubmit() {
-    console.log(this.myForm.value);
+    if (this.myForm.valid) {
+      // 表单有效，提交表单
+      // 使用 `myForm.value` 获取表单的值
+      console.log(this.myForm.value);
+    } else {
+      console.log('false');
+    }
   }
 }
