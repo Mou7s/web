@@ -9,25 +9,22 @@
 </head>
 
 <body>
-  <div class="grid grid-cols-3 gap-4 justify-center ">
-    <header class="col-span-3 bg-blue-500 rounded">header</header>
-    <aside class="col-span-1 bg-blue-500 rounded">aside</aside>
-    <main class="col-span-2 bg-blue-500 rounded">main</main>
-    <footer class="col-span-3 bg-blue-500 rounded">footer</footer>
-    <script>
-      function foo(b) {
-        let a = 10;
-        return a + b + 11;
+  <script>
+    const s = new Date().getSeconds();
+
+    setTimeout(function () {
+      // 输出 "2"，表示回调函数并没有在 500 毫秒之后立即执行
+      console.log("Ran after " + (new Date().getSeconds() - s) + " seconds");
+    }, 500);
+
+    while (true) {
+      if (new Date().getSeconds() - s >= 2) {
+        console.log("Good, looped for 2 seconds");
+        break;
       }
+    }
 
-      function bar(x) {
-        let y = 3;
-        return foo(x * y);
-      }
-
-      console.log(bar(7)); // 返回 42
-
-    </script>
+  </script>
 </body>
 
 </html>
