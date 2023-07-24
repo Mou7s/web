@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
+  <title>Vite App</title>
+</head>
+
+<body>
+  <div class="grid grid-cols-3 gap-4 justify-center ">
+    <header class="col-span-3 bg-blue-500 rounded">header</header>
+    <aside class="col-span-1 bg-blue-500 rounded">aside</aside>
+    <main class="col-span-2 bg-blue-500 rounded">main</main>
+    <footer class="col-span-3 bg-blue-500 rounded">footer</footer>
+    <script>
+      function foo(b) {
+        let a = 10;
+        return a + b + 11;
+      }
+
+      function bar(x) {
+        let y = 3;
+        return foo(x * y);
+      }
+
+      console.log(bar(7)); // 返回 42
+
+    </script>
+</body>
+
+</html>
