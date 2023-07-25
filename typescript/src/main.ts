@@ -1,24 +1,26 @@
-import "./style.css";
-import typescriptLogo from "./typescript.svg";
-import viteLogo from "/vite.svg";
-import { setupCounter } from "./counter.ts";
+class Employee {
+  name: string;
+  age: number;
+  empNo: number;
 
-document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="${viteLogo}" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://www.typescriptlang.org/" target="_blank">
-      <img src="${typescriptLogo}" class="logo vanilla" alt="TypeScript logo" />
-    </a>
-    <h1>Vite + TypeScript</h1>
-    <div class="card">
-      <button id="counter" type="button"></button>
-    </div>
-    <p class="read-the-docs">
-      Click on the Vite and TypeScript logos to learn more
-    </p>
-  </div>
-`;
+  constructor(name: string, age: number, empNo: number) {
+    this.name = name;
+    this.age = age;
+    this.empNo = empNo;
+  }
 
-setupCounter(document.querySelector<HTMLButtonElement>("#counter")!);
+  signIn() {
+    console.log("siginin");
+  }
+
+  askLeave() {
+    console.log("askLeave");
+  }
+}
+
+// 创建 Employee 类的实例
+const employee1 = new Employee("John", 30, 123456);
+
+// 调用对象的方法
+employee1.signIn(); // 输出：John signin
+employee1.askLeave(); // 输出：John askLeave
