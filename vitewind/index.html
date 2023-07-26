@@ -6,11 +6,28 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./style.css">
   <title>Vite App</title>
+
+  <!-- google fonts -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Handjet:wght@300&display=swap');
+  </style>
 </head>
 
-<body>
-  <header class="fixed bg-cyan-500 text-3xl font-bold w-full">Header</header>
-  <main></main>
+<body class="bg-slate-100">
+  <header class="sticky top-0 bg-cyan-100 text-5xl font-bold w-full border-dotted border-4">Header</header>
+  <main>
+
+    <del>
+      <p>This paragraph has been deleted.</p>
+    </del>
+    <button
+      class="transition  bg-slate-100 hover:-translate-y-1; hover:translate-x-6  hover:scale-150 hover:bg-cyan-100  rounded">
+      Save Changes
+    </button>
+
+
+
+  </main>
 
 
   <script type="module" src="./main.js"></script>
