@@ -9,9 +9,10 @@ const message = ref('Hello World!');
 <template>
   <div class="grid place-content-center text-center h-screen">
     <h1 class="text-9xl">{{ message }}</h1>
-    <p>count is: {{ counter.count }}</p>
 
-    <button @click="counter.count++">Count++</button>
+    <button @click="counter.count++" class="rounded-3xl">
+      count is: {{ counter.count }}
+    </button>
   </div>
 </template>
 
