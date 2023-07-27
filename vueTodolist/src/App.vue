@@ -1,30 +1,33 @@
 <script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
+import TodoAdd from './components/TodoAdd.vue';
 
+import TodoFilter from './components/TodoFilter.vue';
+import TodoItem from './components/TodoItem.vue';
+</script>
+ 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
+  <main class="w-screen min-h-screen grid place-content-center text-center bg-cyan-50">
+
+    <!-- container -->
+    <div class="shadow rounded-3xl bg-cyan-100 py-12 px-7">
+      <h1 class="my-6 text-3xl text-cyan-300 ">todolist</h1>
+
+      <TodoAdd></TodoAdd>
+      <TodoFilter></TodoFilter>
+
+      <!-- todolist -->
+      <div class="grid gap-y-4 ">
+
+        <TodoItem text="Todo 1"></TodoItem>
+        <TodoItem text="Todo 2"></TodoItem>
+        <TodoItem text="Todo 3"></TodoItem>
+
+      </div>
+    </div>
+
+  </main>
+  <!-- <HelloWorld msg="Vite + Vue" /> -->
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+
+<style scoped></style>
