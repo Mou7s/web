@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import TodoAdd from './components/TodoAdd.vue';
-
 import TodoFilter from './components/TodoFilter.vue';
-import TodoItem from './components/TodoItem.vue';
+import TodoList from './components/TodoList.vue';
 </script>
  
 <template>
@@ -14,15 +13,8 @@ import TodoItem from './components/TodoItem.vue';
 
       <TodoAdd></TodoAdd>
       <TodoFilter></TodoFilter>
+      <TodoList></TodoList>
 
-      <!-- todolist -->
-      <div class="grid gap-y-4 ">
-
-        <TodoItem text="Todo 1"></TodoItem>
-        <TodoItem text="Todo 2"></TodoItem>
-        <TodoItem text="Todo 3"></TodoItem>
-
-      </div>
     </div>
 
   </main>
