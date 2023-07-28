@@ -18,13 +18,19 @@ const addongoing = (todo, index) => {
 </script>
 
 <template>
-  <div class="grid grid-cols-3 place-content-center w-full text-center">
+  <div
+    class="grid grid-cols-3 place-content-center w-full h-screen text-center"
+  >
     <!-- Todo 列表 -->
 
     <div>
       <h1 class="text-3xl">Todo</h1>
       <div class="relative">
-        <input class="rounded" v-model="inputvalue" />
+        <input
+          class="rounded w-full text-center"
+          v-model="inputvalue"
+          placeholder="input here to add a new task"
+        />
         <button class="absolute right-0 bg-cyan-500 w-6" @click="addtodo()">
           +
         </button>
