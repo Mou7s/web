@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-const todolist = ref(['learn vue', 'learn javascript']);
-const ongoing = ref(['learn html', 'learn css']);
+const todolist = ref(['learn mongoose']);
+const ongoing = ref(['learn vue']);
+const completed = ref(['learn html', 'learn css']);
+
 const inputvalue = ref('');
 
 const addtodo = () => {
@@ -11,9 +13,14 @@ const addtodo = () => {
   }
 };
 
-const addongoing = (todo, index) => {
+const addongoing = (todo: string, index: number) => {
   ongoing.value.push(todo);
   todolist.value.splice(index, 1);
+};
+
+const addcompleted = (item: string, index: any) => {
+  completed.value.push(item);
+  ongoing.value.splice(index, 1);
 };
 </script>
 
@@ -24,14 +31,17 @@ const addongoing = (todo, index) => {
     <!-- Todo 列表 -->
 
     <div>
-      <h1 class="text-3xl">Todo</h1>
+      <h1 class="text-3xl text-cyan-100">Todo</h1>
       <div class="relative">
         <input
-          class="rounded w-full text-center"
+          class="w-full text-center rounded-full"
           v-model="inputvalue"
           placeholder="input here to add a new task"
         />
-        <button class="absolute right-0 bg-cyan-500 w-6" @click="addtodo()">
+        <button
+          class="absolute right-0 bg-cyan-900 w-6 rounded-full"
+          @click="addtodo()"
+        >
           +
         </button>
       </div>
@@ -41,10 +51,10 @@ const addongoing = (todo, index) => {
           <span>{{ todo }}</span>
 
           <button
-            class="absolute right-0 bg-cyan-500 w-6"
+            class="absolute right-0 bg-cyan-900 w-6 rounded-full"
             @click="addongoing(todo, index)"
           >
-            ->
+            =>
           </button>
         </div>
       </div>
@@ -52,15 +62,32 @@ const addongoing = (todo, index) => {
     <!-- 进行中列表 -->
 
     <div class="w-full">
-      <h1 class="text-3xl mb-8">ongoing</h1>
+      <h1 class="text-3xl mb-8 text-cyan-100">ongoing</h1>
 
       <div v-for="(item, index) of ongoing" :key="index">
-        <p>{{ item }}</p>
+        <div class="relative">
+          <span>{{ item }}</span>
+          <button
+            class="absolute right-0 bg-cyan-900 w-6 rounded-full"
+            @click="addcompleted(item, index)"
+          >
+            =>
+          </button>
+        </div>
       </div>
     </div>
     <!-- 已完成列表 -->
 
-    <div class="w-full text-3xl"><h1>completed</h1></div>
+    <div>
+      <h1 class="text-3xl mb-8 text-cyan-100">completed</h1>
+      <div v-for="item of completed">
+        <div class="relative">
+          <del>
+            <span>{{ item }}</span>
+          </del>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
