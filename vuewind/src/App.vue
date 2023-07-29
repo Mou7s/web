@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
+import { ref } from 'vue';
+
 const todolist = ref(['learn mongoose']);
 const ongoing = ref(['learn vue']);
 const completed = ref(['learn html', 'learn css']);
@@ -31,15 +32,15 @@ const addcompleted = (item: string, index: any) => {
     <!-- Todo 列表 -->
 
     <div>
-      <h1 class="text-3xl text-cyan-100">Todo</h1>
+      <h1 class="text-3xl text-cyan-200">Todo</h1>
       <div class="relative">
         <input
-          class="w-full text-center rounded-full"
+          class="w-full text-center rounded-full border"
           v-model="inputvalue"
           placeholder="input here to add a new task"
         />
         <button
-          class="absolute right-0 bg-cyan-900 w-6 rounded-full"
+          class="absolute right-0 bg-cyan-700 w-6 rounded-full"
           @click="addtodo()"
         >
           +
@@ -51,7 +52,7 @@ const addcompleted = (item: string, index: any) => {
           <span>{{ todo }}</span>
 
           <button
-            class="absolute right-0 bg-cyan-900 w-6 rounded-full"
+            class="absolute right-0 bg-cyan-700 w-6 rounded-full"
             @click="addongoing(todo, index)"
           >
             =>
@@ -62,13 +63,13 @@ const addcompleted = (item: string, index: any) => {
     <!-- 进行中列表 -->
 
     <div class="w-full">
-      <h1 class="text-3xl mb-8 text-cyan-100">ongoing</h1>
+      <h1 class="text-3xl mb-8 text-cyan-200">ongoing</h1>
 
       <div v-for="(item, index) of ongoing" :key="index">
         <div class="relative">
           <span>{{ item }}</span>
           <button
-            class="absolute right-0 bg-cyan-900 w-6 rounded-full"
+            class="absolute right-0 bg-cyan-700 w-6 rounded-full"
             @click="addcompleted(item, index)"
           >
             =>
@@ -79,7 +80,7 @@ const addcompleted = (item: string, index: any) => {
     <!-- 已完成列表 -->
 
     <div>
-      <h1 class="text-3xl mb-8 text-cyan-100">completed</h1>
+      <h1 class="text-3xl mb-8 text-cyan-200">completed</h1>
       <div v-for="item of completed">
         <div class="relative">
           <del>
