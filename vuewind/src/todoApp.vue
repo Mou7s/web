@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 
-const todolist = ref(['learn mongoose']);
+const todolist = ref(['learn nodejs']);
 const ongoing = ref(['learn vue']);
 const completed = ref(['learn html', 'learn css']);
 
@@ -38,6 +38,7 @@ const addcompleted = (item: string, index: any) => {
           class="w-full text-center rounded-full border"
           v-model="inputvalue"
           placeholder="input here to add a new task"
+          @keyup.enter="addtodo"
         />
         <button
           class="absolute right-0 bg-cyan-200 w-6 rounded-full"
