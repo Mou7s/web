@@ -27,10 +27,10 @@ const addcompleted = (item: string, index: any) => {
 
 <template>
   <div
-    class="grid grid-cols-3 place-content-center w-full h-screen text-center"
+    class="grid grid-cols-5 place-content-center w-full h-screen text-center"
   >
     <!-- Todo 列表 -->
-
+    <div></div>
     <div>
       <h1 class="text-3xl text-cyan-700">Todo</h1>
       <div class="relative">
@@ -61,8 +61,8 @@ const addcompleted = (item: string, index: any) => {
         </div>
       </div>
     </div>
-    <!-- 进行中列表 -->
 
+    <!-- 进行中列表 -->
     <div class="w-full">
       <h1 class="text-3xl mb-8 text-cyan-700">ongoing</h1>
 
@@ -78,8 +78,8 @@ const addcompleted = (item: string, index: any) => {
         </div>
       </div>
     </div>
-    <!-- 已完成列表 -->
 
+    <!-- 已完成列表 -->
     <div>
       <h1 class="text-3xl mb-8 text-cyan-700">completed</h1>
       <div v-for="item of completed">
@@ -91,6 +91,8 @@ const addcompleted = (item: string, index: any) => {
       </div>
     </div>
   </div>
+
+  <div></div>
 </template>
 
 <style scoped></style>

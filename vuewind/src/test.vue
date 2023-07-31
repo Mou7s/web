@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
-
-const child = ref(null);
-
-onMounted(() => {
-  // child.value 是 <Child /> 组件的实例
-});
+// function add(a: number, b: number): number {
+//   return a + b;
+// }
+const add = (a: number = 42, b: number = 0): number => {
+  return a + b;
+};
 </script>
 
 <template>
-  <Child ref="child" />
+  <div class="grid place-content-center min-h-screen">
+    {{ add() }}
+  </div>
 </template>
