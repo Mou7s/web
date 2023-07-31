@@ -4,4 +4,4 @@ import todoapp from './todoApp.vue';
 import typescript from './typescript.vue';
 import test from './test.vue';
 
-createApp(typescript).mount('#app');
+createApp(test).mount('#app');
