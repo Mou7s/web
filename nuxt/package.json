@@ -13,6 +13,10 @@
     "@nuxt/devtools": "latest",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/node": "^18.17.1",
-    "nuxt": "^3.6.5"
+    "@varlet/nuxt": "^0.0.4",
+    "@varlet/ui": "^2.13.6",
+    "nuxt": "^3.6.5",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.1"
   }
 }
