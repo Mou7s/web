@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# Nuxt 3 TailwindCSS Starter
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -26,7 +26,7 @@ Start the development server on `http://localhost:3000`:
 npm run dev
 
 # pnpm
-pnpm run dev
+pnpm dev
 
 # yarn
 yarn dev
@@ -35,7 +35,7 @@ yarn dev
 use --port to appoint port you want
 
 ```bash
-
+# npm
 npm run dev --port 42
 
 ```
@@ -49,7 +49,7 @@ Build the application for production:
 npm run build
 
 # pnpm
-pnpm run build
+pnpm build
 
 # yarn
 yarn build
@@ -62,7 +62,7 @@ Locally preview production build:
 npm run preview
 
 # pnpm
-pnpm run preview
+pnpm preview
 
 # yarn
 yarn preview
