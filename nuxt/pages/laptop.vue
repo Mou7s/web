@@ -1,4 +1,16 @@
+<script setup lang="ts">
+
+</script>
+
 <template>
+
+  <header></header>
+
+
+  <var-breadcrumbs>
+    <var-breadcrumb><NuxtLink to="/">Home</NuxtLink></var-breadcrumb>
+    <var-breadcrumb><NuxtLink to="/laptop">laptop</NuxtLink></var-breadcrumb>
+  </var-breadcrumbs>
   <table class="text-center">
     <thead>
       <tr>
