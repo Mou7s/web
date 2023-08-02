@@ -1,18 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from './header.vue';
+</script>
 
 <template>
-  <header class="sticky top-0 text-center">
-    <nav class="flex justify-around">
-      <NuxtLink to="/">
-        <VarButton type="primary">Home</VarButton>
-      </NuxtLink>
-      <NuxtLink to="/laptop">
-        <VarButton>Laptop</VarButton>
-      </NuxtLink>
-    </nav>
-  </header>
+  <Header></Header>
 
-  <div class="min-h-screen">index</div>
+  <div
+    class="grid place-content-center text-center text-9xl min-h-screen text-blue-500"
+  >
+    Welcome!
+  </div>
 </template>
 
 <style>
