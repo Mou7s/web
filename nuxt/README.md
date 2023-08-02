@@ -32,6 +32,14 @@ pnpm run dev
 yarn dev
 ```
 
+use --port to appoint port you want
+
+```bash
+
+npm run dev --port 42
+
+```
+
 ## Production
 
 Build the application for production:
