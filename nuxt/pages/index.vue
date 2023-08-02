@@ -17,22 +17,6 @@
 
 <style>
 :root {
-  box-sizing: border-box;
   color-scheme: light dark;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-
-  a:hover {
-    color: #747bff;
-  }
-
-  button {
-    background-color: #f9f9f9;
-  }
 }
 </style>
