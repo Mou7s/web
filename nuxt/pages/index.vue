@@ -17,7 +17,5 @@ import Nav from './nav.vue';
 :root {
   color-scheme: light dark;
   font-family: 'noto sans sc', system-ui;
-  background-color: #dbeafe;
-  color: black;
 }
 </style>
