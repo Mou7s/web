@@ -1,19 +1,14 @@
 <script setup lang="ts">
 import '@material/web/all';
-import Header from './header.vue';
-import Button from './button.vue';
+import Nav from './nav.vue';
 </script>
 
 <template>
-  <Header></Header>
-
-  <div class="bg-blue-100 fixed w-64 h-full">
-    <nav class="grid grid-flow-row w-full place-content-center">
-      <Button :to="'/blog'">Blog</Button>
-      <Button :to="'/projects'">Projects</Button>
-
-      <div></div>
-    </nav>
+  <div class="grid grid-cols-5 min-h-screen">
+    <Nav></Nav>
+    <div class="col-span-4 grid place-content-center">
+      <div class="bg-white rounded-3xl font-bold text-6xl py-64">Welcome!</div>
+    </div>
   </div>
 </template>
 
@@ -22,5 +17,7 @@ import Button from './button.vue';
 :root {
   color-scheme: light dark;
   font-family: 'noto sans sc', system-ui;
+  background-color: #dbeafe;
+  color: black;
 }
 </style>
