@@ -8,6 +8,10 @@
     />
 
     <h2>2.通过MSYS2安装MinGW-w64工具链</h2>
+    <img
+      src="https://code.visualstudio.com/assets/docs/cpp/cpp/cpp-install-MSYS2-toolchain.png"
+      alt="cpp-install-MSYS2-toolchain"
+    />
     <details>
       <summary>什么是MSYS2?</summary>
       <p>
@@ -34,8 +38,68 @@
         MinGW-w64的目标是为Windows平台提供一个轻量级、高效和免费的开发环境，使开发者能够在Windows上编译和运行开源和自由软件项目，以及进行Windows平台特定的开发。
       </p>
     </details>
-    <p>访问<a href="https://www.msys2.org/">MSYS2官网</a>，下载安装程序</p>
-    <h2>3.运行你的C/C++文件</h2>
+    <p>
+      访问<a href="https://www.msys2.org/">MSYS2官网</a
+      >，下载安装程序、安装完成后将会自动打开MSYS2终端
+    </p>
+
+    <p>在终端中输入</p>
+    <code>pacman -S --needed base-devel mingw-w64-x86_64-toolchain</code>
+    <details>
+      <summary>这段代码是什么意思?</summary>
+
+      <p>
+        该命令是在MSYS2环境下使用pacman包管理器来安装开发工具和工具链的命令。让我们逐个解释：
+      </p>
+      <p>
+        pacman是MSYS2中用于安装、更新和管理软件包的命令行工具，类似于其他Linux发行版中的apt或yum。
+      </p>
+      <p>-S: 这是pacman的一个选项，它告诉pacman要安装新的软件包。</p>
+      <p>
+        --needed:
+        这也是pacman的一个选项，它告诉pacman仅安装那些在系统中尚未安装的软件包，即跳过已经安装的软件包。
+      </p>
+      <p>
+        base-devel:
+        这是一个软件包组，它包含了一组基本的开发工具，例如编译器、链接器、调试器和其他与软件开发相关的工具。通过安装base-devel，你可以获得进行一般性软件开发所需的基本工具。
+      </p>
+      <p>
+        mingw-w64-x86_64-toolchain:
+        这是另一个软件包组，它包含了用于在Windows平台上进行开发的工具链。mingw-w64-x86_64-toolchain包含了GCC编译器、binutils、Windows
+        API头文件等，它是用于构建和运行MinGW-w64应用程序的关键工具。
+      </p>
+
+      <p>
+        综上所述，该命令的含义是在MSYS2环境下，安装一组基本的开发工具base-devel以及用于在Windows平台上进行开发的工具链mingw-w64-x86_64-toolchain。而且，只会安装系统中尚未安装的软件包，跳过已经安装的部分，以确保开发环境的完整性和正确性。
+      </p>
+    </details>
+
+    <h2>3.添加MinGW-w64到Windows环境变量</h2>
+
+    <p>默认路径是:</p>
+    <code>C:\msys64\mingw64\bin</code>
+    <h2>检查你的MinGW是否安装成功</h2>
+
+    <p>打开Windows终端，输入</p>
+    <code
+      >gcc --version <br />
+      g++ --version <br />
+      gdb --version
+    </code>
+
+    <p>安装成功的话会输出版本号</p>
+    <h2>4.运行C/C++文件</h2>
+    <img
+      src="https://code.visualstudio.com/assets/docs/cpp/playbutton/run-play-button.png"
+      alt="run-play-button"
+    />
+
+    <p>在VSC右上角找到运行按钮</p>
+    <img
+      src="https://code.visualstudio.com/assets/docs/cpp/playbutton/select-gcc-compiler.png"
+      alt="select-gcc-compiler"
+    />
+    <p>并在接下来的窗口选择g++</p>
   </div>
 </template>
 <style scoped>
@@ -79,5 +143,10 @@ details p {
 a {
   --tw-bg-opacity: 1;
   color: rgb(219 234 254 / var(--tw-bg-opacity));
+}
+
+img {
+  width: 75%;
+  margin: 0 auto;
 }
 </style>
