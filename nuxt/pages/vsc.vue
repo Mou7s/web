@@ -1,6 +1,21 @@
 <template>
   <div>
-    Visual Studio代码的C/C++支持由Microsoft
-    C/C++扩展提供，以实现在Windows、Linux和macOS上的跨平台C和C++开发。创建*.cpp文件时，扩展插件会添加语法高亮显示（着色）、智能完成和悬停（IntelliSense）以及错误检查等功能。
+    <h1>如何配置Windows下的Visual Studio Code 中的 C/C++环境</h1>
+    <h2>1.安装C/C++插件</h2>
+    <h2>2.设置你的C++环境</h2>
   </div>
 </template>
+<style scoped>
+h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 700;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin: 2rem auto;
+}
+</style>
