@@ -6,8 +6,12 @@ import Nav from './nav.vue';
 <template>
   <div class="grid grid-cols-5 min-h-screen">
     <Nav></Nav>
-    <div class="col-span-4 grid place-content-center">
-      <div class="bg-white rounded-3xl font-bold text-6xl py-64">Welcome!</div>
+    <div class="col-span-4 grid place-content-center bg-blue-100">
+      <div
+        class="rounded-3xl font-bold xl:bg-white xl:p-72 xl:text-9xl text-5xl"
+      >
+        Welcome!
+      </div>
     </div>
   </div>
 </template>
@@ -17,5 +21,6 @@ import Nav from './nav.vue';
 :root {
   color-scheme: light dark;
   font-family: 'noto sans sc', system-ui;
+  color: black;
 }
 </style>
