@@ -16,7 +16,7 @@ useSeoMeta({
       <div
         class="rounded-3xl font-bold xl:bg-white xl:p-80 xl:text-9xl text-5xl"
       >
-        Welcome!
+        Welcome
       </div>
     </div>
   </div>
