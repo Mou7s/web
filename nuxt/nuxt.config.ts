@@ -20,6 +20,6 @@ export default defineNuxtConfig({
   },
   modules: ['@nuxtjs/tailwindcss', '@varlet/nuxt'],
   devtools: { enabled: true },
-  
+
   css: ['~/assets/css/main.css'],
 });
