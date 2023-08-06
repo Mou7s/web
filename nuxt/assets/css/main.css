@@ -5,3 +5,17 @@
     font-family: 'noto sans sc', system-ui;
     color: black;
 }
+
+
+.page-enter-active,
+.page-leave-active {
+    transition: filter 0.3s;
+}
+
+.page-enter-from {
+    filter: blur(1rem);
+}
+
+.page-leave-to {
+    filter: blur(1rem);
+}
