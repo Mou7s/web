@@ -1,0 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC&family=Noto+Serif+SC&display=swap');
+
+:root {
+    color-scheme: light dark;
+    font-family: 'noto sans sc', system-ui;
+    color: black;
+}

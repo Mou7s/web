@@ -1,8 +1,3 @@
-<script setup lang="ts">
-import Nav from './nav.vue';
-import Vsc from './vsc.vue';
-</script>
-
 <template>
   <div class="grid grid-cols-5">
     <Nav></Nav>
