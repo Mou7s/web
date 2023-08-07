@@ -20,7 +20,7 @@ useSeoMeta({
         </var-breadcrumbs>
       </div>
 
-      <div class="rounded-3xl w-5/6 my-0 mx-auto bg-white p-4">
+      <div class="rounded-3xl w-5/6 my-0 mx-auto bg-white p-10">
         <Vsc></Vsc>
       </div>
     </div>

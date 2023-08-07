@@ -4,7 +4,9 @@ const props = defineProps(['to']);
 
 <template>
   <NuxtLink :to="props.to">
-    <div class="rounded-full h-16 grid place-content-center hover:bg-slate-300">
+    <div
+      class="rounded-full h-16 grid place-content-center hover:bg-slate-300 cursor-pointer"
+    >
       <slot></slot>
     </div>
   </NuxtLink>
