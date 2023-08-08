@@ -10,6 +10,9 @@ useSeoMeta({
 </script>
 
 <template>
+  <Header></Header>
+  <div v-if="showSidebar" class="z-10">123123</div>
+
   <div class="grid grid-cols-5 min-h-screen">
     <Nav></Nav>
     <div class="col-span-4 grid place-content-center bg-blue-100">

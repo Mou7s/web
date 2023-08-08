@@ -19,8 +19,3 @@
 .page-leave-to {
     filter: blur(1rem);
 }
-
-:root {
-    --md-text-button-label-text-type: 500 2rem/2rem system-ui;
-    --md-sys-color-primary: black;
-}
