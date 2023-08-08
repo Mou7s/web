@@ -11,7 +11,6 @@ useSeoMeta({
 
 <template>
   <Header></Header>
-  <div v-if="showSidebar" class="z-10">123123</div>
 
   <div class="grid grid-cols-5 min-h-screen">
     <Nav></Nav>

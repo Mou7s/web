@@ -11,5 +11,6 @@ const showSidebar = ref(false);
       </div>
     </div>
     <div><md-text-button>Dark</md-text-button></div>
+    <div v-if="showSidebar" class="z-10">123123</div>
   </header>
 </template>
