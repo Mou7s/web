@@ -7,8 +7,6 @@ useSeoMeta({
   description: 'This is personal website of mou7s, welcome!',
   ogDescription: 'This is personal website of mou7s, welcome!',
 });
-
-const { data } = await useFetch('/api/hello');
 </script>
 
 <template>
@@ -18,7 +16,7 @@ const { data } = await useFetch('/api/hello');
       <div
         class="rounded-3xl font-bold xl:bg-white xl:p-80 xl:text-9xl text-5xl"
       >
-        <pre>{{ data }}</pre>
+        Welcome!
       </div>
     </div>
   </div>
