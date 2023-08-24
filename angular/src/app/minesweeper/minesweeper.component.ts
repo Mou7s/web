@@ -5,13 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-minesweeper',
   standalone: true,
   imports: [CommonModule],
-  template: `
-    <p>
-      minesweeper works!
-    </p>
-  `,
-  styleUrls: ['./minesweeper.component.css']
+  template: ` <p>minesweeper works!</p> `,
+  styleUrls: ['./minesweeper.component.css'],
 })
-export class MinesweeperComponent {
-
-}
+export class MinesweeperComponent {}
