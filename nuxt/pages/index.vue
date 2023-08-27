@@ -56,15 +56,15 @@ function onClick(x: number, y: number) {
   console.log(`Clicked at ${x} ${y}`);
 }
 function getBlockClass(block: blockstate) {
-  return block.mine ? 'text-red' : 'text-gray';
+  return block.mine ? 'text-red border-red' : 'text-gray';
 }
 generateMines();
 updateNumbers();
 </script>
 
 <template>
-  <div grid place-content-center min-h-screen text-center>
-    <div v-for="(row, y) in state" :key="y">
+  <div min-h-screen text-center>
+    <div v-for="(row, y) in state" :key="y" flex="~">
       <button
         v-for="(item, x) in row"
         @click="onClick(x, y)"
@@ -73,9 +73,14 @@ updateNumbers();
         h-10
         border
         hover:bg-gray
+        flex="~"
+        items-center
+        justify-center
         :class="getBlockClass(item)"
       >
-        {{ item.mine ? 'x' : item.adjacentMines || '.' }}
+        <div v-if="item.mine" i-mdi-bomb></div>
+
+        <div v-else>{{ item.adjacentMines }}</div>
       </button>
     </div>
   </div>

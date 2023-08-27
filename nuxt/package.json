@@ -9,6 +9,7 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
+    "@iconify-json/mdi": "^1.1.54",
     "@nuxt/devtools": "latest",
     "@unocss/nuxt": "^0.55.3",
     "nuxt": "^3.7.0"
