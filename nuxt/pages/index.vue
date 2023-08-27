@@ -1,5 +1,12 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div grid place-content-center min-h-screen text-9xl font-700 ><p>hello world!</p></div>
+  <div grid grid-col-5  >
+    <div>
+
+
+      <button></button>
+    </div>
+    
+ </div>
 </template>
