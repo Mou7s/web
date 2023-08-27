@@ -55,7 +55,9 @@ function updateNumbers() {
 function onClick(x: number, y: number) {
   console.log(`Clicked at ${x} ${y}`);
 }
-
+function getBlockClass(block: blockstate) {
+  return block.mine ? 'text-red' : 'text-gray';
+}
 generateMines();
 updateNumbers();
 </script>
@@ -71,6 +73,7 @@ updateNumbers();
         h-10
         border
         hover:bg-gray
+        :class="getBlockClass(item)"
       >
         {{ item.mine ? 'x' : item.adjacentMines || '.' }}
       </button>
