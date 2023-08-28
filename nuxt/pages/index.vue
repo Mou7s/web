@@ -63,7 +63,7 @@ updateNumbers();
 </script>
 
 <template>
-  <div min-h-screen text-center>
+  <div grid place-content-center min-h-screen text-center>
     <div v-for="(row, y) in state" :key="y" flex="~">
       <button
         v-for="(item, x) in row"
@@ -73,9 +73,6 @@ updateNumbers();
         h-10
         border
         hover:bg-gray
-        flex="~"
-        items-center
-        justify-center
         :class="getBlockClass(item)"
       >
         <div v-if="item.mine" i-mdi-bomb></div>
