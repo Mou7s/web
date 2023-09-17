@@ -4,4 +4,6 @@
   <NuxtLink to="/findMostFrequentElement"
     ><button>findMostFrequentElement</button></NuxtLink
   >
+
+  <NuxtLink to="/stack"><button>stack</button></NuxtLink>
 </template>
