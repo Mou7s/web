@@ -6,4 +6,5 @@
   >
 
   <NuxtLink to="/stack"><button>stack</button></NuxtLink>
+  <NuxtLink to="/findMaxFrequency"><button>findMaxFrequency</button></NuxtLink>
 </template>
