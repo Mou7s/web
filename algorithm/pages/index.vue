@@ -7,4 +7,5 @@
 
   <NuxtLink to="/stack"><button>stack</button></NuxtLink>
   <NuxtLink to="/findMaxFrequency"><button>findMaxFrequency</button></NuxtLink>
+  <NuxtLink to="/datafetching"><button>datafetching</button></NuxtLink>
 </template>
