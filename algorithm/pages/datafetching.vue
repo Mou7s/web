@@ -1,10 +1,10 @@
 <script setup>
-const { data } = await useFetch('../server/api/hello.ts');
+const { data } = await useFetch('https://api.nuxtjs.dev/mountains');
 </script>
 
 <template>
   <div>
     <p>Result of <code>/api/hello</code>:</p>
-    <pre>{{ data }}</pre>
+    <p>{{ data }}</p>
   </div>
 </template>
