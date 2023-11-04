@@ -1,71 +1,52 @@
 <template>
-  <div
-    class="min-h-screen dark:bg-neutral-900 dark:text-neutral-100 grid place-content-center"
-  >
-    <div>
-      <input type="number" v-model="num1" class="p-2 border rounded-md" />
-      <input type="number" v-model="num2" class="p-2 border rounded-md" />
-    </div>
-    <div class="mt-4">
-      <button
-        @click="operator = 'add'"
-        class="p-2 bg-blue-500 text-white rounded-md mr-2"
-      >
-        +
-      </button>
-      <button
-        @click="operator = 'subtract'"
-        class="p-2 bg-blue-500 text-white rounded-md mr-2"
-      >
-        -
-      </button>
-      <button
-        @click="operator = 'multiply'"
-        class="p-2 bg-blue-500 text-white rounded-md mr-2"
-      >
-        *
-      </button>
-      <button
-        @click="operator = 'divide'"
-        class="p-2 bg-blue-500 text-white rounded-md mr-2"
-      >
-        /
-      </button>
-    </div>
-    <div class="mt-4">Result: {{ result }}</div>
+  <div>
+    <h1>堆排序</h1>
+    <p>排序前：{{ beforeSort }}</p>
+    <p>排序后：{{ afterSort }}</p>
   </div>
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+function heapSort(arr) {
+  let len = arr.length;
 
-// 定义响应式数据
-const num1 = ref(0);
-const num2 = ref(0);
-const operator = ref('add');
+  // 构建大顶堆
+  for (let i = Math.floor(len / 2) - 1; i >= 0; i--) {
+    heapify(arr, i, len);
+  }
 
-// 定义计算逻辑
-const result = computed(() => {
-  const strategies = {
-    add: function (num1, num2) {
-      return num1 + num2;
-    },
-    subtract: function (num1, num2) {
-      return num1 - num2;
-    },
-    multiply: function (num1, num2) {
-      return num1 * num2;
-    },
-    divide: function (num1, num2) {
-      return num1 / num2;
-    },
-  };
-  return strategies[operator.value](num1.value, num2.value);
-});
-</script>
+  // 交换堆顶元素和末尾元素，重新构造堆
+  for (let i = len - 1; i > 0; i--) {
+    [arr[0], arr[i]] = [arr[i], arr[0]];
+    heapify(arr, 0, i);
+  }
 
-<style scoped>
-input {
-  background-color: black;
+  return arr;
 }
-</style>
+
+function heapify(arr, i, len) {
+  let left = 2 * i + 1;
+  let right = 2 * i + 2;
+  let largest = i;
+
+  if (left < len && arr[left] > arr[largest]) {
+    largest = left;
+  }
+
+  if (right < len && arr[right] > arr[largest]) {
+    largest = right;
+  }
+
+  if (largest !== i) {
+    [arr[i], arr[largest]] = [arr[largest], arr[i]];
+    heapify(arr, largest, len);
+  }
+}
+const arr = [4, 3, 8, 5, 9];
+
+const beforeSort = arr.join(', ');
+const afterSort = heapSort(arr).join(', ');
+
+console.log(beforeSort);
+console.log(afterSort);
+</script>
