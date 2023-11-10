@@ -1,30 +1,23 @@
-<template>
-  <nav>
-    <NuxtLink to="/"> Home </NuxtLink>
-    <NuxtLink to="/custom"> Custom </NuxtLink>
-    <NuxtLink to="/dynamic"> Dynamic </NuxtLink>
-    <NuxtLink to="/other"> Other </NuxtLink>
-  </nav>
-  <NuxtLayout class="layouts">
-    <NuxtPage />
-  </NuxtLayout>
-  <footer>
-    <button @click="setPageLayout('default')">layouts/default.vue</button>
-    <button @click="setPageLayout('custom')">layouts/custom.vue</button>
-    <button @click="setPageLayout('other')">layouts/other.vue</button>
-    <button @click="setPageLayout(false)">Remove layout</button>
-  </footer>
-</template>
+<script setup lang="ts">
+const route = useRoute();
+</script>
 
-<style scoped>
-nav,
-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-.layouts {
-  padding: 1rem;
-}
-</style>
+<template>
+  <NuxtExampleLayout repo="nuxt/examples" example="routing/middleware">
+    <NuxtPage />
+
+    <template #nav>
+      <nav class="flex align-center gap-4 p-4">
+        <NuxtLink to="/" class="n-link-base"> Home </NuxtLink>
+        <NuxtLink to="/forbidden" class="n-link-base"> Forbidden </NuxtLink>
+        <NuxtLink to="/redirect" class="n-link-base"> Redirect </NuxtLink>
+      </nav>
+    </template>
+
+    <template #footer>
+      <div class="text-center p-4 op-50">
+        Current route: <code>{{ route.path }}</code>
+      </div>
+    </template>
+  </NuxtExampleLayout>
+</template>
