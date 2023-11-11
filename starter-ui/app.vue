@@ -20,7 +20,12 @@ const label = computed(() =>
   })
 );
 
-console.log(label.value);
+useSeoMeta({
+  title: 'CPU Database',
+  ogTitle: 'CPU Database',
+  description: 'CPU Database',
+  ogDescription: 'CPU Database',
+});
 </script>
 
 <template>
