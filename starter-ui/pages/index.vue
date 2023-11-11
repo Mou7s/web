@@ -22,10 +22,7 @@ const columns = [
     key: 'Overclock',
     label: 'Overclock',
   },
-  {
-    key: 'L2Cache',
-    label: 'L2Cache',
-  },
+
   {
     key: 'L3Cache',
     label: 'L3Cache',
@@ -53,7 +50,6 @@ const cpus = [
     Cores: 8,
     Threads: 12,
     Overclock: 'No',
-    L2Cache: '7 MB',
     L3Cache: '12 MB',
     Technology: '10 nm',
     Geekbench6Single: 2218,
@@ -64,7 +60,6 @@ const cpus = [
     Cores: 6,
     Threads: 12,
     Overclock: 'Yes',
-    L2Cache: '3 MB',
     L3Cache: '32 MB',
     Technology: '7 nm',
     Geekbench6Single: 2113,
@@ -75,7 +70,6 @@ const cpus = [
     Cores: 8,
     Threads: 8,
     Overclock: 'No',
-    L2Cache: '0 MB',
     L3Cache: '2 MB',
     Technology: '7 nm',
     Geekbench6Single: 782,
@@ -86,7 +80,6 @@ const cpus = [
     Cores: 4,
     Threads: 8,
     Overclock: 'Yes',
-    L2Cache: '0 MB',
     L3Cache: '8 MB',
     Technology: '14 nm',
     Geekbench6Single: 947,
@@ -97,7 +90,6 @@ const cpus = [
     Cores: 4,
     Threads: 4,
     Overclock: 'Yes',
-    L2Cache: '0 MB',
     L3Cache: '6 MB',
     Technology: '45 nm',
     Geekbench6Single: 351,
@@ -108,7 +100,6 @@ const cpus = [
     Cores: 12,
     Threads: 20,
     Overclock: 'No',
-    L2Cache: '12 MB',
     L3Cache: '25 MB',
     Technology: '10 nm',
     Geekbench6Single: 2500,
@@ -143,6 +134,6 @@ const filteredRows = computed(() => {
       <UInput v-model="q" placeholder="Filter CPUs..." />
     </div>
 
-    <UTable :columns="selectedColumns" :rows="filteredRows" />
+    <UTable :columns="selectedColumns" :rows="filteredRows" class="w-full" />
   </UCard>
 </template>
