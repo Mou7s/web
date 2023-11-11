@@ -1,51 +1,4 @@
 <script setup>
-const columns = [
-  {
-    key: 'Name',
-    label: 'Name',
-  },
-  {
-    key: 'Architecture',
-    label: 'Architecture',
-  },
-  {
-    key: 'Cores',
-    label: 'Cores',
-    sortable: true,
-  },
-  {
-    key: 'Threads',
-    label: 'Threads',
-    sortable: true,
-  },
-  {
-    key: 'Overclock',
-    label: 'Overclock',
-  },
-  {
-    key: 'L2Cache',
-    label: 'L2Cache',
-  },
-  {
-    key: 'L3Cache',
-    label: 'L3Cache',
-  },
-  {
-    key: 'Technology',
-    label: 'Technology',
-  },
-  {
-    key: 'Threads',
-    label: 'Threads',
-  },
-  {
-    key: 'Geekbench6Single',
-    label: 'Geekbench6Single',
-    sortable: true,
-  },
-];
-const selectedColumns = ref([...columns]);
-
 const cpus = [
   {
     Name: 'i5 12450H',
@@ -114,35 +67,4 @@ const cpus = [
     Geekbench6Single: 2500,
   },
 ];
-
-const q = ref('');
-
-const filteredRows = computed(() => {
-  if (!q.value) {
-    return cpus;
-  }
-
-  return cpus.filter((row) => {
-    return Object.values(row).some((value) => {
-      return String(value).toLowerCase().includes(q.value.toLowerCase());
-    });
-  });
-});
 </script>
-
-<template>
-  <UCard class="mt-10">
-    <div class="grid grid-cols-2">
-      <USelectMenu
-        v-model="selectedColumns"
-        :options="columns"
-        multiple
-        placeholder="Columns"
-        class="w-48"
-      />
-      <UInput v-model="q" placeholder="Filter CPUs..." />
-    </div>
-
-    <UTable :columns="selectedColumns" :rows="filteredRows" />
-  </UCard>
-</template>
