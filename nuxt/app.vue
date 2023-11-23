@@ -5,7 +5,6 @@
     <div>
       <Sort></Sort>
       <List></List>
-
       <Algo></Algo>
     </div>
   </div>
