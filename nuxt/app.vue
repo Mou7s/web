@@ -1,6 +1,2 @@
-<template>
-  <div>{{ props }}</div>
-</template>
-
-<script setup>
-</script>
+<script setup></script>
+<template></template>
