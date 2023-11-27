@@ -1,33 +1,36 @@
 <script setup>
-const account = 'admin';
-const password = 'admin';
-
 const state = reactive({
-  account: '',
+  email: '',
   password: '',
 });
 
 const validate = (state) => {
-  return state.account === account && state.password === password;
+  const errors = [];
+  if (!state.email) errors.push({ path: 'email', message: 'Required' });
+  if (!state.password) errors.push({ path: 'password', message: 'Required' });
+  return errors;
 };
 
-async function onSubmit() {
-  if (validate(state)) {
-    alert('登录成功');
+async function onSubmit(event) {
+  if (event.data.email === 'admin' && event.data.password === 'admin') {
+    alert('Login Success');
     return navigateTo('/inside');
   } else {
-    return alert('账号或密码错误');
+    alert('Login Failed');
   }
 }
 </script>
 
 <template>
-  <UCard class="mt-10">
-    <UForm :state="state" class="space-y-4" @submit="onSubmit">
-      <h1 class="text-center font-bold text-3xl">公司OA系统</h1>
-
-      <UFormGroup label="Account" name="account">
-        <UInput v-model="state.account" />
+  <UCard>
+    <UForm
+      :validate="validate"
+      :state="state"
+      class="space-y-4"
+      @submit="onSubmit"
+    >
+      <UFormGroup label="Email" name="email">
+        <UInput v-model="state.email" />
       </UFormGroup>
 
       <UFormGroup label="Password" name="password">
@@ -35,6 +38,6 @@ async function onSubmit() {
       </UFormGroup>
 
       <UButton type="submit"> Submit </UButton>
-    </UForm>
-  </UCard>
+    </UForm></UCard
+  >
 </template>
