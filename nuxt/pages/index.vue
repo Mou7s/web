@@ -2,12 +2,6 @@
 const account = 'admin';
 const password = 'admin';
 
-const state = () =>
-  useState({
-    email: 'admin',
-    password: 'admin',
-  });
-
 const validate = (state) => {
   return state.email === account && state.password === password;
 };
