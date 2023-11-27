@@ -2,11 +2,16 @@
 const account = 'admin';
 const password = 'admin';
 
+const state = reactive({
+  account: '',
+  password: '',
+});
+
 const validate = (state) => {
-  return state.email === account && state.password === password;
+  return state.account === account && state.password === password;
 };
 
-async function onSubmit(event) {
+async function onSubmit() {
   if (validate(state)) {
     alert('登录成功');
     return navigateTo('/inside');
@@ -18,16 +23,11 @@ async function onSubmit(event) {
 
 <template>
   <UCard class="mt-10">
-    <UForm
-      :validate="validate"
-      :state="state"
-      class="space-y-4"
-      @submit="onSubmit"
-    >
+    <UForm :state="state" class="space-y-4" @submit="onSubmit">
       <h1 class="text-center font-bold text-3xl">公司OA系统</h1>
 
-      <UFormGroup label="Email" name="email">
-        <UInput v-model="state.email" />
+      <UFormGroup label="Account" name="account">
+        <UInput v-model="state.account" />
       </UFormGroup>
 
       <UFormGroup label="Password" name="password">
