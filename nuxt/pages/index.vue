@@ -1,26 +1,24 @@
 <script setup>
-let password = 'admin';
-let admin = 'admin';
+const account = 'admin';
+const password = 'admin';
 
 const state = () =>
   useState({
-    email: admin,
-    password: admin,
+    email: 'admin',
+    password: 'admin',
   });
 
 const validate = (state) => {
-  const errors = [];
-  if (!state.email) {
-    errors.push({ path: 'email', message: 'Required' });
-  }
-  if (!state.password) {
-    errors.push({ path: 'password', message: 'Required' });
-  }
-  if (state.password) {
-  }
+  return state.email === account && state.password === password;
 };
 
-async function onSubmit(event) {}
+async function onSubmit(event) {
+  if (validate(state)) {
+    console.log('logined in');
+  } else {
+    return false;
+  }
+}
 </script>
 
 <template>
@@ -31,6 +29,8 @@ async function onSubmit(event) {}
       class="space-y-4"
       @submit="onSubmit"
     >
+      <h1 class="text-center font-bold text-3xl">公司OA系统</h1>
+
       <UFormGroup label="Email" name="email">
         <UInput v-model="state.email" />
       </UFormGroup>
