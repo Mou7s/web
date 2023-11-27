@@ -14,9 +14,10 @@ const validate = (state) => {
 
 async function onSubmit(event) {
   if (validate(state)) {
-    console.log('logined in');
+    alert('登录成功');
+    return navigateTo('/inside');
   } else {
-    return false;
+    return alert('账号或密码错误');
   }
 }
 </script>
