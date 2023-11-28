@@ -39,11 +39,16 @@ function load_jsmind() {
   };
   var jm = new jsMind(options);
   jm.show(mind);
-  // jm.set_readonly(true);
-  // var mind_data = jm.get_data();
-  // alert(mind_data);
   jm.add_node('sub2', 'sub23', 'new node', { 'background-color': 'red' });
   jm.set_node_color('sub21', 'green', '#ccc');
+
+  let nodes = jm.get_root().children;
+  let nodearray = [];
+  for (const node of nodes) {
+    for (const subnode of node.children) {
+      nodearray.push(subnode);
+    }
+  }
 }
 
 load_jsmind();
