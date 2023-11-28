@@ -1,12 +1,15 @@
 <script setup>
+let canvas = ref(null);
+
+onMounted(() => {
+  const ctx = canvas.value.getContext('2d');
+
+  ctx.fillStyle = 'blue';
+  ctx.fillRect(10, 10, 150, 100);
+  ctx.fillRect(200, 200, 150, 100);
+});
 </script>
 
 <template>
-  <link
-    type="text/css"
-    rel="stylesheet"
-    href="https://unpkg.com/jsmind@0.7.5/style/jsmind.css"
-  />
-
-  <UCard></UCard>>
+  <canvas ref="canvas"></canvas>
 </template>
