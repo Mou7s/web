@@ -31,7 +31,7 @@ function load_jsmind() {
       { id: 'sub3', parentid: 'root', topic: 'sub3' },
     ],
   };
-  
+
   var options = {
     container: 'jsmind_container',
     editable: true,
