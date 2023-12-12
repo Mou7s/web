@@ -1,76 +1,20 @@
-<!--
-https://eugenkiss.github.io/7guis/tasks/#flight
--->
-
 <script setup>
-const flightType = ref('one-way flight');
-const departureDate = ref(dateToString(new Date()));
-const returnDate = ref(departureDate.value);
-
-const isReturn = computed(() => flightType.value === 'return flight');
-
-const canBook = computed(
-  () =>
-    !isReturn.value ||
-    stringToDate(returnDate.value) > stringToDate(departureDate.value)
-);
-
-function book() {
-  alert(
-    isReturn.value
-      ? `You have booked a return flight leaving on ${departureDate.value} and returning on ${returnDate.value}.`
-      : `You have booked a one-way flight leaving on ${departureDate.value}.`
-  );
-}
-
-function stringToDate(str) {
-  const [y, m, d] = str.split('-');
-  return new Date(+y, m - 1, +d);
-}
-
-function dateToString(date) {
-  return (
-    date.getFullYear() +
-    '-' +
-    pad(date.getMonth() + 1) +
-    '-' +
-    pad(date.getDate())
-  );
-}
-
-function pad(n, s = String(n)) {
-  return s.length < 2 ? `0${s}` : s;
-}
+const Sort = (array) => {
+  //bubblesort
+  for (let i = 0; i < array.length; i++) {
+    let swapped = false;
+    for (let j = 0; j < array.length - i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        let temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+        swapped = true;
+      }
+    }
+    if (swapped == false) return array;
+  }
+  return array;
+};
 </script>
 
-<template>
-  <select v-model="flightType">
-    <option value="one-way flight">One-way Flight</option>
-    <option value="return flight">Return Flight</option>
-  </select>
-
-  <input type="date" v-model="departureDate" />
-  <input type="date" v-model="returnDate" :disabled="!isReturn" />
-
-  <button :disabled="!canBook" @click="book">Book</button>
-
-  <p>{{ canBook ? '' : 'Return date must be after departure date.' }}</p>
-</template>
-
-<style>
-select,
-input,
-button {
-  display: block;
-  margin: 0.5em 0;
-  font-size: 15px;
-}
-
-input[disabled] {
-  color: #999;
-}
-
-p {
-  color: red;
-}
-</style>
+<template>{{ Sort([7, 3, 5, 5, 6, 0, 8]) }}</template>
