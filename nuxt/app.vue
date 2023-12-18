@@ -1,34 +1,15 @@
 <template>
-  <div>
-    <button @click="toggleComponent">Toggle Component</button>
-
-    <!-- 使用动态组件 -->
-    <component :is="currentComponent"></component>
-  </div>
+  <button @click="toggleComponent">Toggle Component</button>
+  <component :is="currentComponent"></component>
 </template>
 
-<script>
-import FirstComponent from "./FirstComponent.vue";
-import SecondComponent from "./SecondComponent.vue";
+<script setup>
+import { ref } from "vue";
 
-export default {
-  data() {
-    return {
-      currentComponent: "FirstComponent",
-    };
-  },
-  methods: {
-    toggleComponent() {
-      // 切换当前组件
-      this.currentComponent =
-        this.currentComponent === "FirstComponent"
-          ? "SecondComponent"
-          : "FirstComponent";
-    },
-  },
-  components: {
-    FirstComponent,
-    SecondComponent,
-  },
+const currentComponent = ref("First");
+
+const toggleComponent = () => {
+  currentComponent.value =
+    currentComponent.value === "First" ? "Second" : "First";
 };
 </script>
