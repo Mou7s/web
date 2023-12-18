@@ -20,20 +20,24 @@ const people = [
   '考勤',
 ];
 
-const selected = ref(people[0]);
+const selected = useState(() => people[0]);
+
+if (selected == '全部') {
+  console.log('quanbu');
+}
 </script>
 <template>
   <div class="flex mt-2 gap-4 place-content-around">
     <div>
-      <USelectMenu v-model="selected" :options="people" class="w-32" />
+      <USelectMenu
+        v-model="selected"
+        :options="people"
+        class="w-32"
+        @change="ref"
+      />
     </div>
     <div class="flex-grow">
-      <UInput
-        color="primary"
-        variant="outline"
-        placeholder="Search..."
-        autofocus="true"
-      />
+      <UInput variant="outline" placeholder="Search..." :autofocus="true" />
     </div>
     <div><UKbd value="Enter" /></div>
     <div><UButton>刷新</UButton></div>
