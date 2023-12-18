@@ -1,7 +1,7 @@
 <script setup>
-import { shallowRef } from "vue";
-import CompA from "./components/CompA.vue";
-import CompB from "./components/CompB.vue";
+import { shallowRef } from 'vue';
+import CompA from './components/CompA.vue';
+import CompB from './components/CompB.vue';
 
 const current = shallowRef(CompA);
 </script>
