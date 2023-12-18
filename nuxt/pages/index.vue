@@ -20,11 +20,11 @@ const people = [
   '考勤',
 ];
 
-const selected = useState(() => people[0]);
-
-if (selected == '全部') {
-  console.log('quanbu');
+function reloadPage() {
+  window.location.reload();
 }
+
+const selected = useState(() => people[0]);
 </script>
 <template>
   <div class="flex m-2 gap-2 place-content-around">
@@ -33,7 +33,7 @@ if (selected == '全部') {
         v-model="selected"
         :options="people"
         class="w-32"
-        @change="ref"
+        @change="reloadPage"
       />
     </div>
     <div class="flex-grow">
