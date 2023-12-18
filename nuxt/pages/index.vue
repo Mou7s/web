@@ -28,7 +28,7 @@ const selected = ref(people[0]);
       <USelectMenu v-model="selected" :options="people" class="w-32" />
     </div>
     <div class="flex-grow">
-      <UInput color="primary" variant="outline" placeholder="Search..." />
+      <UInput color="primary" variant="outline" placeholder="Search..."  autofocus="true"/>
     </div>
     <div><UButton>刷新</UButton></div>
   </div>
