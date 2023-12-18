@@ -1,15 +1,17 @@
-<template>
-  <button @click="toggleComponent">Toggle Component</button>
-  <component :is="currentComponent"></component>
-</template>
-
 <script setup>
-import { ref } from "vue";
+import { shallowRef } from "vue";
+import CompA from "./components/CompA.vue";
+import CompB from "./components/CompB.vue";
 
-const currentComponent = ref("First");
-
-const toggleComponent = () => {
-  currentComponent.value =
-    currentComponent.value === "First" ? "Second" : "First";
-};
+const current = shallowRef(CompA);
 </script>
+
+<template>
+  <div class="demo">
+    <label><input type="radio" v-model="current" :value="CompA" /> A</label>
+    <label><input type="radio" v-model="current" :value="CompB" /> B</label>
+    <KeepAlive>
+      <component :is="current"></component>
+    </KeepAlive>
+  </div>
+</template>
