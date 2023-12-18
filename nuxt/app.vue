@@ -1,30 +1,34 @@
 <template>
-  <nav>
-    <NuxtLink to="/"> Home </NuxtLink>
-    <NuxtLink to="/custom"> Custom </NuxtLink>
-    <NuxtLink to="/dynamic"> Dynamic </NuxtLink>
-    <NuxtLink to="/other"> Other </NuxtLink>
-  </nav>
-  <NuxtLayout class="layouts">
-    <NuxtPage />
-  </NuxtLayout>
-  <footer>
-    <button @click="setPageLayout('default')">layouts/default.vue</button>
-    <button @click="setPageLayout('custom')">layouts/custom.vue</button>
-    <button @click="setPageLayout('other')">layouts/other.vue</button>
-    <button @click="setPageLayout(false)">Remove layout</button>
-  </footer>
+  <div>
+    <button @click="toggleComponent">Toggle Component</button>
+
+    <!-- 使用动态组件 -->
+    <component :is="currentComponent"></component>
+  </div>
 </template>
 
-<style scoped>
-nav,
-footer {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-}
-.layouts {
-  padding: 1rem;
-}
-</style>
+<script>
+import FirstComponent from "./FirstComponent.vue";
+import SecondComponent from "./SecondComponent.vue";
+
+export default {
+  data() {
+    return {
+      currentComponent: "FirstComponent",
+    };
+  },
+  methods: {
+    toggleComponent() {
+      // 切换当前组件
+      this.currentComponent =
+        this.currentComponent === "FirstComponent"
+          ? "SecondComponent"
+          : "FirstComponent";
+    },
+  },
+  components: {
+    FirstComponent,
+    SecondComponent,
+  },
+};
+</script>
