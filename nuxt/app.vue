@@ -1,5 +1,5 @@
 <template>
-  <header class="text-center bg-blue-500 py-2">伊美美容美发护肤造型</header>
+  <header class="text-center bg-gray-500 py-2">伊美美容美发护肤造型</header>
   <NuxtLoadingIndicator />
   <NuxtPage />
 </template>

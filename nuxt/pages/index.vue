@@ -5,11 +5,31 @@
  * @FilePath: \project\pages\index.vue
 -->
 
-<script setup></script>
+<script setup>
+const people = [
+  '最近',
+  '全部',
+  '会员管理',
+  '收银管理',
+  '员工管理',
+  '老板报表',
+  '数据分析',
+  '员工提成',
+  '基础资料',
+  '系统管理',
+  '考勤',
+];
+
+const selected = ref(people[0]);
+</script>
 <template>
-  <div class="flex justify-between mt-2">
-    <div><UButton>搜索</UButton></div>
-    <div>分类</div>
-    <div>刷新</div>
+  <div class="flex mt-2 gap-4 place-content-around">
+    <div>
+      <USelectMenu v-model="selected" :options="people" class="w-32" />
+    </div>
+    <div class="flex-grow">
+      <UInput color="primary" variant="outline" placeholder="Search..." />
+    </div>
+    <div><UButton>刷新</UButton></div>
   </div>
 </template>
