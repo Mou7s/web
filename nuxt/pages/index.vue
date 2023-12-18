@@ -27,7 +27,7 @@ if (selected == '全部') {
 }
 </script>
 <template>
-  <div class="flex mt-2 gap-4 place-content-around">
+  <div class="flex m-2 gap-2 place-content-around">
     <div>
       <USelectMenu
         v-model="selected"
@@ -39,7 +39,6 @@ if (selected == '全部') {
     <div class="flex-grow">
       <UInput variant="outline" placeholder="Search..." :autofocus="true" />
     </div>
-    <div><UKbd value="Enter" /></div>
-    <div><UButton>刷新</UButton></div>
+    <!-- <div><UButton>刷新</UButton></div> -->
   </div>
 </template>
