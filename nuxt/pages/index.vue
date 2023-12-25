@@ -25,6 +25,10 @@ function reloadPage() {
 }
 
 const selected = useState(() => people[0]);
+//promise
+c
+let promise = fetch(url);
+
 </script>
 <template>
   <div class="flex m-2 gap-2 place-content-around">
@@ -41,4 +45,6 @@ const selected = useState(() => people[0]);
     </div>
     <!-- <div><UButton>刷新</UButton></div> -->
   </div>
+
+  <div></div>
 </template>
