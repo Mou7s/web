@@ -13,9 +13,5 @@
     "@nuxt/devtools": "latest",
     "@nuxt/ui": "^2.11.1",
     "nuxt": "^3.9.0"
-  },
-  "dependencies": {
-    "jsmind": "^0.7.9",
-    "mariadb": "^3.2.3"
   }
 }
