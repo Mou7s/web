@@ -4,19 +4,10 @@
 
 <script setup>
 /**
- * @param {number} millis
- * @return {Promise}
+ * @param {number[]} nums
+ * @param {Function} fn
+ * @param {number} init
+ * @return {number}
  */
-async function sleep(millis) {
-  return new Promise((resolve) => {
-    setTimeout(resolve, millis);
-  });
-}
-
-const example = async () => {
-  console.log('Hello');
-  await sleep(1000);
-  console.log('World');
-};
-example()
+var reduce = function (nums, fn, init) {};
 </script>
