@@ -1,13 +1,19 @@
 <template>
-  <div class="min-h-screen grid place-content-center text-3xl">Hello World</div>
+  <div class="min-h-screen grid place-content-center text-3xl">
+    <div :class="textColorClass" class="text-9xl font-serif">
+      {{ selectedColor }}
+    </div>
+    <select v-model="selectedColor">
+      <option value="blue">blue</option>
+      <option value="red">red</option>
+    </select>
+  </div>
 </template>
 
 <script setup>
-/**
- * @param {number[]} nums
- * @param {Function} fn
- * @param {number} init
- * @return {number}
- */
-var reduce = function (nums, fn, init) {};
+const selectedColor = ref('blue');
+
+const textColorClass = computed(() => {
+  return `text-${selectedColor.value}-500`;
+});
 </script>
