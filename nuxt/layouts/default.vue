@@ -1,18 +1,25 @@
 <template>
-  <div
-    class="border-green-200 border border-solid p-4 relative bg-lime-700 before:absolute default"
-  >
-    <slot />
-  </div>
+  <div>{{ upload }}</div>
+
+  <input type="text" v-model="text" />
+  {{ text }}
+
+  <UButton @click="uploadFile">upload</UButton>
 </template>
 
-<style scoped>
-.default::before {
-  content: 'layouts/default.vue';
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  color: #68b538;
-  font-family: monospace;
-}
-</style>
+<script setup>
+const text = ref('');
+const upload = ref([]);
+
+onMounted(() => {
+  const storedUpload = localStorage.getItem('upload');
+  if (storedUpload) {
+    upload.value = JSON.parse(storedUpload);
+  }
+});
+
+const uploadFile = () => {
+  upload.value.push(text.value);
+  localStorage.setItem('upload', JSON.stringify(upload.value));
+};
+</script>
