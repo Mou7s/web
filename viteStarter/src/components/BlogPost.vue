@@ -1,0 +1,7 @@
+<script setup>
+const props = defineProps(['title']);
+</script>
+
+<template>
+  <p class="font-serif text-2xl">{{ props.title }}</p>
+</template>

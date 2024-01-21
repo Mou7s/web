@@ -1,17 +1,16 @@
 <script setup>
+import BlogPost from './components/BlogPost.vue';
 import { ref } from 'vue';
 
-const currentTab = ref('Home');
-
-const tabs = {
-  Home,
-  Posts,
-  Archive,
-};
+const posts = ref([
+  { id: 1, title: 'My journey with Vue' },
+  { id: 2, title: 'Blogging with Vue' },
+  { id: 3, title: 'Why Vue is so fun' },
+]);
 </script>
 
 <template>
-  <div
-    class="border border-gray-100 rounded py-4 px-8 mt-1 mb-10 select-none overflow-x-auto"
-  ></div>
+  <div class="grid place-content-center h-screen">
+    <BlogPost v-for="post in posts" :key="post.id" :title="post.title" />
+  </div>
 </template>
