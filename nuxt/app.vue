@@ -1,12 +1,5 @@
-<script setup lang="ts">
-const nav = [
-  { label: 'Home', to: '/' },
-  { label: 'Custom', to: '/custom' },
-  { label: 'Dynamic', to: '/dynamic' },
-  { label: 'Other', to: '/other' },
-];
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <NuxtLayout></NuxtLayout>
+  <NuxtLayout><NuxtPage></NuxtPage></NuxtLayout>
 </template>
