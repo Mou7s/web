@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
+      /* 填写样式 */
+    </style>
+  </head>
+
+  <body>
+    <!-- 填写标签 -->
+    <script type="text/javascript">
+      // 填写JavaScript getday(7)=星期天
+      function _getday(value) {
+        var day = new Date().getDay();
+        var week = [
+          '星期一',
+          '星期二',
+          '星期三',
+          '星期四',
+          '星期五',
+          '星期六',
+          '星期天',
+        ];
+        return week[(day + value) % 7];
+      }
+    </script>
+  </body>
+</html>
