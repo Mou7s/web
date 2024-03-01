@@ -1,7 +1,5 @@
 <template>
-  {{ test }}
-
-  <UButton @click="changeTest">change</UButton>
+  <div class="grid place-content-center h-screen">
+    <UButton @click="setPageLayout('debounce')">Link to debounce</UButton>
+  </div>
 </template>
-
-<script setup></script>
