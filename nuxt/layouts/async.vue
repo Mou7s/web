@@ -1,8 +1,10 @@
-<template><div>async</div></template>
+<template>
+  <p>async</p>
+  <p>latitude:{{ latitude }}</p>
+  <p>longitude: {{ longitude }}</p>
+</template>
 
 <script setup>
-import { ref } from 'vue';
-
 let latitude = ref(0);
 let longitude = ref(0);
 
@@ -26,14 +28,12 @@ async function getWeather() {
   console.log(result);
 }
 
-getLocation()
-  .then((position) => {
-    latitude.value = position.coords.latitude;
-    longitude.value = position.coords.longitude;
-    console.log(latitude.value, longitude.value);
-    getWeather();
-  })
-  .catch((error) => {
-    console.error('Error getting location:', error);
-  });
+async function fetchLocation() {
+  const position = await getLocation();
+  latitude.value = position.coords.latitude;
+  longitude.value = position.coords.longitude;
+  console.log(latitude.value, longitude.value);
+  await getWeather();
+}
+fetchLocation();
 </script>
