@@ -1,15 +1,15 @@
-<template>{{ twoSum(nums) }}</template>
-
-<script setup>
-const longestCommonPrefix = (strs) => {
-  if (strs.length === 0) return '';
-  let prefix = strs[0];
-  for (let i = 1; i < strs.length; i++) {
-    while (strs[i].indexOf(prefix) !== 0) {
-      prefix = prefix.substring(0, prefix.length - 1);
-      if (prefix === '') return '';
-    }
-  }
-  return prefix;
-};
-</script>
+<template>
+  <p><abbr title="aberration"> Abbr</abbr></p>
+  <address><a>liuchuge7777777@gmail.com</a></address>
+  <del>del</del>
+  <ins>ins</ins>
+  <kbd>kbd</kbd>
+  <fieldset>
+    <legend>legend</legend>
+    <input type="radio" name="radio" id="radio" />
+    <label for="radio">radio </label>
+  </fieldset>
+  <p>This is <mark>mark</mark></p>
+  <meter value="0.6657"></meter>
+  <progress value="0.6657"></progress>
+</template>
