@@ -12,4 +12,7 @@ onUnmounted(() => {
 
 <style>
 /*每个页面公共css */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 </style>

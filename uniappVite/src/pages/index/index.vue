@@ -1,8 +1,12 @@
 <template>
-  <view class="content">
-    <image class="logo" src="/static/logo.png"></image>
-    <view class="text-area">
-      <text class="title">{{ title }}</text>
+  <view class="flex flex-col items-center justify-center">
+    <image
+      class="h-48 w-48 mt-48 mx-auto mb-12"
+      src="/static/logo.png"
+      aria-label="logo"
+    ></image>
+    <view class="flex justify-center" aria-label="text-area">
+      <text class="text-4xl text-gray-400" aria-label="title">{{ title }}</text>
     </view>
   </view>
 </template>
@@ -13,30 +17,4 @@ import { ref } from 'vue';
 const title = ref('Hello Uniapp');
 </script>
 
-<style>
-.content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.logo {
-  height: 200rpx;
-  width: 200rpx;
-  margin-top: 200rpx;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 50rpx;
-}
-
-.text-area {
-  display: flex;
-  justify-content: center;
-}
-
-.title {
-  font-size: 36rpx;
-  color: #8f8f94;
-}
-</style>
+<style></style>
