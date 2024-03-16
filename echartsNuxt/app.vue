@@ -1,6 +1,8 @@
 <script setup></script>
 
 <template>
-  <NuxtLoadingIndicator />
-  <NuxtLayout><NuxtPage></NuxtPage></NuxtLayout>
+  <div>
+    <NuxtLoadingIndicator />
+    <NuxtLayout><NuxtPage></NuxtPage></NuxtLayout>
+  </div>
 </template>
