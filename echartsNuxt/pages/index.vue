@@ -23,7 +23,6 @@ use([
 ]);
 
 provide(THEME_KEY, 'dark');
-
 const option = ref({
   title: {
     text: 'Traffic Sources',
