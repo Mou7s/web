@@ -50,6 +50,9 @@ dependencies:
   vue:
     specifier: ^3.4.21
     version: 3.4.21(typescript@5.4.2)
+  vue-confetti-explosion:
+    specifier: ^1.0.2
+    version: 1.0.2(vue@3.4.21)
   vue-i18n:
     specifier: ^9.10.2
     version: 9.10.2(vue@3.4.21)
@@ -8645,6 +8648,15 @@ packages:
       terser: 5.29.2
     optionalDependencies:
       fsevents: 2.3.3
+
+  /vue-confetti-explosion@1.0.2(vue@3.4.21):
+    resolution: {integrity: sha512-80OboM3/6BItIoZ6DpNcZFqGpF607kjIVc5af56oKgtFmt5yWehvJeoYhkzYlqxrqdBe0Ko4Ie3bWrmLau+dJw==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      vue: ^3.0.5
+    dependencies:
+      vue: 3.4.21(typescript@5.4.2)
+    dev: false
 
   /vue-eslint-parser@9.4.2(eslint@8.57.0):
     resolution: {integrity: sha512-Ry9oiGmCAK91HrKMtCrKFWmSFWvYkpGglCeFAIqDdr9zdXmMMpJOmUJS7WWsW7fX81h6mwHmUZCQQ1E0PkSwYQ==}

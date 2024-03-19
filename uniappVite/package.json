@@ -55,6 +55,7 @@
     "@dcloudio/uni-mp-xhs": "3.0.0-3090920231225001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-3090920231225001",
     "vue": "^3.4.21",
+    "vue-confetti-explosion": "^1.0.2",
     "vue-i18n": "^9.10.2"
   },
   "devDependencies": {
