@@ -1,8 +1,5 @@
 <template>
-  <div
-    aria-label="container"
-    class="flex justify-center min-h-screen dark:bg-black dark:text-white"
-  >
+  <div aria-label="container" class="flex justify-center min-h-screen dark:bg-black dark:text-white">
     <div>
       <p class="text-3xl Transition font-serif hover:text-green-500">
         viteStarter
