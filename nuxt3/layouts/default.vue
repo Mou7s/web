@@ -1,4 +1,6 @@
 <template>
   <Header></Header>
-  <NuxtPage><slot></slot></NuxtPage>
+  <NuxtPage>
+    <slot></slot>
+  </NuxtPage>
 </template>
