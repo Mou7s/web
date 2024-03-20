@@ -1,21 +1,17 @@
 <template>
-  <view class="grid place-content-center">
+  <div class="flex justify-center items-center flex-col ">
 
-    <text class="text-5xl  font-serif hover:text-green-500 Transition">
+    <div>
+      <img src="../static/logo.png" alt="">
+    </div>
+
+    <div class="text-9xl hover:text-green-500 Transition">
       Uniapp
-    </text>
+    </div>
 
-
-  </view>
+  </div>
 </template>
 
 <script setup>
 import { ref, computed } from 'vue';
 </script>
-
-
-<style>
-.Transition {
-  @apply transition-colors ease-in-out duration-500;
-}
-</style>
