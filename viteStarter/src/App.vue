@@ -1,16 +1,20 @@
 <template>
   <div aria-label="container" class="flex justify-center min-h-screen dark:bg-black dark:text-white">
-    <div>
-      <p class="text-3xl Transition font-serif hover:text-green-500">
-        viteStarter
-      </p>
+
+    <div class="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
+      <div class="item"></div>
     </div>
+
   </div>
 </template>
-<script setup>
-for (let i = 1; i <= 5; i++) {
-  setTimeout(function timer() {
-    console.log(i);
-  }, i * 1000);
+
+
+
+<style scoped>
+.item {
+  @apply w-32 h-32 bg-cyan-500;
 }
-</script>
+</style>
