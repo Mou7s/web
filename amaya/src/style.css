@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&family=Noto+Serif+SC:wght@400;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Transition {
+    @apply transition-all duration-500 ease-in-out;
+}
+
+body {
+    font-family: 'Noto Sans SC', Noto Serif SC;
+}
