@@ -1,6 +1,9 @@
 <template>
   <div class="dark:bg-black dark:text-white min-h-screen">
     <Header></Header>
+    <main>
+      <img src="./assets/images/headerBackground1.png" alt="">
+    </main>
   </div>
 </template>
 
