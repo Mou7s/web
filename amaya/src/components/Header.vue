@@ -1,5 +1,5 @@
 <template>
-  <header class="desktop fixed w-full px-4">
+  <header class="desktop fixed w-full p-4">
     <div class="flex justify-between items-center">
       <div><img src="../assets/images/logoWhite.png" alt="logoWhite" /></div>
       <div>
@@ -25,12 +25,15 @@
   </header>
 </template>
 
-<style>
-ul > li {
-  cursor: pointer;
-}
+<style lang="less">
+header {
+  li {
+    cursor: pointer;
+    @apply duration-300 transition-all;
 
-ul > li:hover {
-  @apply border-b-2 border-white;
+    &:hover {
+      @apply text-2xl font-bold;
+    }
+  }
 }
 </style>
