@@ -1,7 +1,9 @@
 <template>
   <header class="desktop fixed w-full p-4">
     <div class="flex justify-between items-center">
-      <div><img src="../assets/images/logoWhite.png" alt="logoWhite" /></div>
+      <div>
+        <img src="../assets/images/logoWhite.png" alt="logoWhite" />
+      </div>
       <div>
         <nav>
           <ul class="hidden xl:flex justify-center items-center gap-8">
@@ -25,15 +27,20 @@
   </header>
 </template>
 
-<style lang="less">
+<style lang="less" scoped>
 header {
   li {
     cursor: pointer;
     @apply duration-300 transition-all;
-
+s
     &:hover {
       @apply text-2xl font-bold;
     }
   }
 }
 </style>
+
+<script setup>
+import { computed } from 'vue';
+import { isTop } from '../composables/global.vue';
+</script>
