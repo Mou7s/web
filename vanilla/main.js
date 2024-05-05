@@ -1,11 +1,15 @@
-const readline = require('readline');
+const rps = (p1, p2) => {
+  if (p1 === p2) return 'Draw!';
 
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
+  const gameRules = {
+    rock: 'scissors',
+    paper: 'rock',
+    scissors: 'paper',
+  };
 
-rl.question('请输入一个字符串: ', (answer) => {
-  console.log(`你输入的字符串是: ${answer}`);
-  rl.close();
-});
+  return `Player ${gameRules[p1] === p2 ? 1 : 2} won!`;
+};
+
+const p1 = 'rock';
+const p2 = 'scissors';
+console.log(rps(p1, p2)); // Player 1 won
