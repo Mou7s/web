@@ -11,10 +11,17 @@
 
 <section class="flex flex-col justify-center items-center">
   <h1 class="w-full">
-    <span class="welcome">
+    <span
+      class=" block relative w-full h-0"
+      style="padding-bottom: calc(100% * 495 / 2048);"
+    >
       <picture>
         <source srcset={welcome} type="image/webp" />
-        <img src={welcome_fallback} alt="Welcome" />
+        <img
+          class="absolute w-full h-full top-0 block"
+          src={welcome_fallback}
+          alt="Welcome"
+        />
       </picture>
     </span>
 
@@ -27,21 +34,3 @@
 
   <Counter />
 </section>
-
-<style>
-  .welcome {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 0;
-    padding: 0 0 calc(100% * 495 / 2048) 0;
-  }
-
-  .welcome img {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    display: block;
-  }
-</style>
