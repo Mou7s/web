@@ -1,6 +1,4 @@
 <template>
-  <div class="flex justify-center items-center"></div>
+  <div class="flex justify-center items-center">index works</div>
 </template>
-<script setup>
-
-</script>
+<script setup></script>
