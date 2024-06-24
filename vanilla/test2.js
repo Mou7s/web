@@ -27,4 +27,3 @@ rl.on('close', () => {
     console.log(newA + ' ' + newB);
   }
 });
-
