@@ -10,7 +10,7 @@ function knapsack(weights, values, capacity) {
       if (weights[i - 1] <= j) {
         dp[i][j] = Math.max(
           dp[i - 1][j],
-          values[i - 1] + dp[i - 1][j - weights[i - 1]]
+          values[i - 1] + dp[i - 1][j - weights[i - 1]],
         );
       } else {
         dp[i][j] = dp[i - 1][j];
